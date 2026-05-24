@@ -1,0 +1,704 @@
+/* ========================================
+   PAGES.CSS — Shared styles for all inner pages
+   Companion to style.css
+======================================== */
+
+/* ========================================
+   PAGE HERO BANNER
+======================================== */
+.page-hero {
+    background:
+        linear-gradient(135deg,
+            rgba(10, 17, 40, 0.96),
+            rgba(20, 33, 61, 0.96),
+            rgba(225, 29, 116, 0.85)),
+        url('../Images/bg-pattern.png') center / cover no-repeat;
+    padding: 80px 0 70px;
+    color: var(--white);
+}
+
+.page-hero-content h1 {
+    color: var(--white);
+    font-size: 52px;
+    font-weight: 800;
+}
+
+.page-hero-content p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 17px;
+    max-width: 580px;
+    margin: 0 auto;
+}
+
+.breadcrumb {
+    background: transparent;
+}
+
+.breadcrumb-item a {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.breadcrumb-item a:hover {
+    color: var(--white);
+}
+
+.breadcrumb-item.active,
+.breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* ========================================
+   BACKGROUND VARIANT
+======================================== */
+.bg-light-custom {
+    background-color: var(--light-bg);
+}
+
+/* ========================================
+   ABOUT PAGE — STAT BOXES
+======================================== */
+.stat-box {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.stat-box:hover {
+    transform: translateY(-4px);
+}
+
+/* ========================================
+   ABOUT PAGE — STORY IMAGE
+======================================== */
+.about-img-wrap {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+}
+
+.about-badge {
+    position: absolute;
+    bottom: -20px;
+    left: -20px;
+    background: var(--white);
+    border-radius: 16px;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark-navy);
+    line-height: 1.4;
+}
+
+/* ========================================
+   ABOUT PAGE — VALUE CARDS
+======================================== */
+.value-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.value-card:hover {
+    transform: translateY(-8px);
+}
+
+.value-icon i {
+    color: var(--secondary-blue);
+}
+
+.value-card h4 {
+    margin: 16px 0 10px;
+}
+
+/* ========================================
+   ABOUT PAGE — TEAM CARDS
+======================================== */
+.team-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(225, 29, 116, 0.12);
+}
+
+.team-img {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--primary-pink);
+    display: block;
+    margin: 0 auto;
+}
+
+.team-role {
+    font-size: 12px;
+    font-weight: 600;
+    color: var(--primary-pink);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.team-social a {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--light-bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--dark-navy);
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.team-social a:hover {
+    background: var(--primary-pink);
+    color: var(--white);
+}
+
+/* ========================================
+   ABOUT PAGE — WHY CHOOSE US
+======================================== */
+.why-item {
+    background: var(--white);
+    border-radius: 16px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+    transition: 0.3s ease;
+}
+
+.why-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(225, 29, 116, 0.1);
+}
+
+.why-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: rgba(225, 29, 116, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-pink);
+    font-size: 20px;
+}
+
+/* ========================================
+   SERVICE PAGE — DETAIL CARDS
+======================================== */
+.service-detail-card {
+    background: var(--light-bg);
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.service-feature-list {
+    list-style: none;
+    padding: 0;
+}
+
+.service-feature-list li {
+    padding: 8px 0;
+    font-weight: 500;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.service-feature-list li:last-child {
+    border-bottom: none;
+}
+
+.tech-badge {
+    background: var(--white);
+    border: 1px solid rgba(0, 123, 255, 0.15);
+    border-radius: 10px;
+    padding: 10px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--dark-navy);
+    text-align: center;
+    transition: 0.3s ease;
+}
+
+.tech-badge:hover {
+    border-color: var(--primary-pink);
+    color: var(--primary-pink);
+    background: rgba(225, 29, 116, 0.04);
+}
+
+/* ========================================
+   SERVICE PAGE — PROCESS CARDS
+======================================== */
+.process-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+    position: relative;
+}
+
+.process-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 16px 40px rgba(225, 29, 116, 0.12);
+}
+
+.process-number {
+    font-size: 48px;
+    font-weight: 800;
+    color: rgba(225, 29, 116, 0.1);
+    line-height: 1;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.process-card h5 {
+    color: var(--dark-navy);
+    font-weight: 700;
+}
+
+/* ========================================
+   PORTFOLIO PAGE — FILTER
+======================================== */
+.portfolio-filter {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.filter-btn {
+    background: var(--white);
+    border: 2px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50px;
+    padding: 10px 24px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--dark-navy);
+    cursor: pointer;
+    transition: 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary-pink);
+    border-color: var(--primary-pink);
+    color: var(--white);
+}
+
+/* ========================================
+   PORTFOLIO PAGE — CARDS
+======================================== */
+.portfolio-card {
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.4s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 50px rgba(225, 29, 116, 0.12);
+}
+
+.portfolio-img-wrap {
+    position: relative;
+    overflow: hidden;
+}
+
+.portfolio-placeholder {
+    height: 220px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.7);
+    transition: 0.4s ease;
+}
+
+.web-bg      { background: linear-gradient(135deg, #0a1128, #007bff); }
+.design-bg   { background: linear-gradient(135deg, #e11d74, #ff6b9d); }
+.marketing-bg { background: linear-gradient(135deg, #0a1128, #e11d74); }
+
+.portfolio-overlay {
+    position: absolute;
+    inset: 0;
+    background: rgba(225, 29, 116, 0.85);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: 0.4s ease;
+}
+
+.portfolio-card:hover .portfolio-overlay {
+    opacity: 1;
+}
+
+.portfolio-link {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-pink);
+    font-size: 18px;
+    transform: scale(0.7);
+    transition: 0.3s ease;
+}
+
+.portfolio-card:hover .portfolio-link {
+    transform: scale(1);
+}
+
+.portfolio-info {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.portfolio-tag {
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--primary-pink);
+}
+
+.portfolio-info h5 {
+    margin-top: 8px;
+    font-size: 16px;
+}
+
+/* ========================================
+   PORTFOLIO PAGE — TESTIMONIALS
+======================================== */
+.testimonial-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+    border-left: 4px solid var(--primary-pink);
+}
+
+.testimonial-card:hover {
+    transform: translateY(-6px);
+}
+
+.stars i {
+    font-size: 14px;
+}
+
+.author-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--dark-navy), var(--primary-pink));
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+}
+
+/* ========================================
+   CONTACT PAGE
+======================================== */
+.contact-info-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    transition: 0.3s ease;
+}
+
+.contact-info-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 16px 40px rgba(225, 29, 116, 0.1);
+}
+
+.contact-icon i {
+    color: var(--primary-pink);
+}
+
+.contact-info-card h5 {
+    margin: 12px 0 6px;
+    font-size: 15px;
+}
+
+.contact-info-card a {
+    color: var(--text-grey);
+}
+
+.contact-info-card a:hover {
+    color: var(--primary-pink);
+}
+
+/* Form wrapper */
+.contact-form-wrap {
+    background: var(--white);
+    border-radius: 24px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+}
+
+.contact-input {
+    border: 2px solid rgba(0, 0, 0, 0.08);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    transition: 0.3s ease;
+}
+
+.contact-input:focus {
+    border-color: var(--primary-pink);
+    box-shadow: 0 0 0 4px rgba(225, 29, 116, 0.08);
+}
+
+.fw-600 { font-weight: 600; }
+
+/* WhatsApp CTA box */
+.whatsapp-cta {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid #25D366;
+}
+
+.btn-success {
+    background: #25D366 !important;
+    border: none;
+}
+
+.btn-success:hover {
+    background: #1da852 !important;
+}
+
+/* Social links sidebar */
+.contact-social-card,
+.contact-faq-card {
+    background: var(--white);
+    border-radius: 20px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+}
+
+.social-link-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 10px;
+    color: var(--dark-navy);
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.social-link-row:hover {
+    background: rgba(225, 29, 116, 0.05);
+    border-color: rgba(225, 29, 116, 0.2);
+    color: var(--primary-pink);
+}
+
+.social-link-row i:first-child {
+    font-size: 18px;
+    width: 20px;
+}
+
+.faq-item + .faq-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.06);
+    padding-top: 12px;
+}
+
+/* ========================================
+   LEGAL PAGES (Privacy & Terms)
+======================================== */
+.legal-toc {
+    background: var(--white);
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+}
+
+.toc-heading {
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--primary-pink);
+    margin-bottom: 16px;
+}
+
+.toc-list li {
+    margin-bottom: 10px;
+}
+
+.toc-list a {
+    font-size: 13px;
+    color: var(--text-grey);
+    font-weight: 500;
+    display: block;
+    padding: 4px 0;
+    border-left: 2px solid transparent;
+    padding-left: 10px;
+    transition: 0.3s ease;
+}
+
+.toc-list a:hover {
+    color: var(--primary-pink);
+    border-left-color: var(--primary-pink);
+    padding-left: 14px;
+}
+
+/* Legal content area */
+.legal-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.legal-badge {
+    display: inline-flex;
+    align-items: center;
+    background: var(--light-bg);
+    border-radius: 50px;
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-grey);
+}
+
+.legal-section {
+    margin-bottom: 48px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.07);
+}
+
+.legal-section:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.legal-section h3 {
+    font-size: 22px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.section-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 38px;
+    height: 38px;
+    background: linear-gradient(135deg, var(--primary-pink), #c21863);
+    color: var(--white);
+    border-radius: 10px;
+    font-size: 13px;
+    font-weight: 800;
+    flex-shrink: 0;
+}
+
+.legal-section h6 {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--dark-navy);
+    margin: 20px 0 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.legal-section p,
+.legal-section li {
+    color: var(--text-grey);
+    line-height: 1.8;
+    font-size: 15px;
+}
+
+.legal-section ul {
+    padding-left: 20px;
+}
+
+.legal-section ul li {
+    margin-bottom: 10px;
+}
+
+.legal-highlight {
+    background: rgba(225, 29, 116, 0.05);
+    border: 1px solid rgba(225, 29, 116, 0.2);
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--dark-navy);
+}
+
+.contact-block {
+    background: var(--light-bg);
+    border-radius: 16px;
+    border-left: 4px solid var(--primary-pink);
+}
+
+.contact-block p {
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.contact-block a {
+    color: var(--primary-pink);
+}
+
+.contact-block a:hover {
+    text-decoration: underline;
+}
+
+/* ========================================
+   RESPONSIVE — PAGES
+======================================== */
+@media (max-width: 991px) {
+    .page-hero-content h1 {
+        font-size: 38px;
+    }
+    .about-badge {
+        left: 0;
+        bottom: -10px;
+        font-size: 12px;
+        padding: 12px 14px;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        padding: 60px 0 50px;
+    }
+    .page-hero-content h1 {
+        font-size: 32px;
+    }
+    .contact-form-wrap {
+        padding: 28px 20px !important;
+    }
+    .legal-section h3 {
+        font-size: 18px;
+    }
+    .portfolio-filter {
+        gap: 8px;
+    }
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 13px;
+    }
+}

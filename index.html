@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FasLax</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         NAVBAR
+    ========================================= -->
+    <header>
+        <nav class="navbar navbar-expand-lg main-nav">
+            <div class="container">
+
+                <!-- Logo -->
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="/images/Logo.png" alt="FasLax Logo">
+                </a>
+
+                <!-- Mobile Toggle -->
+                <button class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faslaxNavbar">
+
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse justify-content-end" id="faslaxNavbar">
+
+                    <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+
+                        <!-- Dropdown -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="#"
+                                role="button"
+                                data-bs-toggle="dropdown">
+
+                                Services
+                            </a>
+
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="service.html#web">Web Development</a></li>
+                                <li><a class="dropdown-item" href="service.html#design">Graphic Design</a></li>
+                                <li><a class="dropdown-item" href="service.html#marketing">Digital Marketing</a></li>
+                                <li><a class="dropdown-item" href="service.html#seo">SEO & SMM</a></li>
+                                <li><a class="dropdown-item" href="service.html#hosting">Domain & Hosting</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+
+                    </ul>
+
+                    <!-- CTA Button -->
+                    <div class="ms-lg-4 mt-3 mt-lg-0">
+                        <a href="contact.html" class="btn btn-primary">
+                            Request a Quote
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ========================================
+         MAIN CONTENT
+    ========================================= -->
+    <main>
+
+        <!-- ========================================
+             HERO SECTION
+        ========================================= -->
+        <section class="hero-section py-5">
+            <div class="container">
+
+                <div class="row align-items-center gy-5">
+
+                    <!-- Hero Content -->
+                    <div class="col-lg-7">
+
+                        <span class="section-label">
+                            WELCOME TO FASLAX
+                        </span>
+
+                        <h1 class="display-4 fw-bold mt-3">
+                            We Build, Design, and Scale Your
+                            <span>Digital Presence.</span>
+                        </h1>
+
+                        <p class="mt-4">
+                            Complete Web Development, Creative Graphic Design,
+                            and Strategic Digital Marketing Solutions by FasLax.
+                        </p>
+
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+
+                            <a href="service.html" class="btn btn-primary">
+                                Our Services
+                            </a>
+
+                            <a href="portfolio.html" class="btn btn-outline-dark">
+                                View Portfolio
+                            </a>
+
+                        </div>
+
+                        <!-- ── Inline Feature Strip ── -->
+                        <div class="hero-features mt-4">
+
+                            <div class="hero-feature-item">
+                                <i class="fa-solid fa-hourglass-half"></i>
+                                <div>
+                                    <strong>On-Time Delivery</strong>
+                                    <span>We value your time</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-feature-divider"></div>
+
+                            <div class="hero-feature-item">
+                                <i class="fa-solid fa-star"></i>
+                                <div>
+                                    <strong>Quality Assured</strong>
+                                    <span>Excellence is our promise</span>
+                                </div>
+                            </div>
+
+                            <div class="hero-feature-divider"></div>
+
+                            <div class="hero-feature-item">
+                                <i class="fa-brands fa-teamspeak"></i>
+                                <div>
+                                    <strong>24/7 Support</strong>
+                                    <span>We're here to help</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                    <!-- Hero Image -->
+                    <div class="col-lg-5 text-center">
+                        <img src="/images/hero_img.png"
+                            alt="FasLax"
+                            class="img-fluid hero-logo-img">
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================
+             SERVICES SECTION
+        ========================================= -->
+        <section class="services-section py-5">
+            <div class="container">
+
+                <div class="text-center mb-5">
+
+                    <span class="section-label">
+                        WHAT WE DO
+                    </span>
+
+                    <h2 class="fw-bold mt-3">
+                        Our Services
+                    </h2>
+
+                    <p class="mt-3 services-desc">
+                        We combine creativity, technology, and strategy to deliver digital solutions that drive real results for your business.
+                    </p>
+
+                </div>
+
+                <div class="row g-4">
+
+                    <!-- Service Card -->
+                    <div class="col-lg-4 d-flex">
+                        <div class="service-card p-4 h-100 w-100 d-flex flex-column">
+
+                            <div class="service-icon mb-4">
+                                <i class="fa-solid fa-code fa-2x"></i>
+                            </div>
+
+                            <h3>Web Infrastructure & Development</h3>
+
+                            <p>
+                                We build fast, secure, and scalable websites
+                                and e-commerce solutions tailored to your business needs.
+                            </p>
+
+                            <ul class="list-unstyled mt-4 flex-grow-1">
+
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    HTML5, CSS3, Bootstrap
+                                </li>
+
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    WordPress, Shopify, Elementor
+                                </li>
+
+                                <li>
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Domain & Hosting Setup
+                                </li>
+
+                            </ul>
+                            <a class="learn-more-link mt-3" href="service.html#web">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+
+                    <!-- Service Card -->
+                    <div class="col-lg-4 d-flex">
+                        <div class="service-card p-4 h-100 w-100 d-flex flex-column">
+
+                            <div class="service-icon mb-4">
+                                <i class="fa-solid fa-palette fa-2x"></i>
+                            </div>
+
+                            <h3>Creative Graphic Design</h3>
+
+                            <p>
+                                We create eye-catching visuals that represent
+                                your brand and leave a lasting impression.
+                            </p>
+
+                            <ul class="list-unstyled mt-4 flex-grow-1">
+
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Custom Logos & Branding
+                                </li>
+
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Social Media Creatives
+                                </li>
+
+                                <li>
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Website Banners & Graphics
+                                </li>
+
+                            </ul>
+                            <a class="learn-more-link mt-3" href="service.html#design">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+
+                    <!-- Service Card -->
+                    <div class="col-lg-4 d-flex">
+                        <div class="service-card p-4 h-100 w-100 d-flex flex-column">
+
+                            <div class="service-icon mb-4">
+                                <i class="fa-solid fa-chart-line fa-2x"></i>
+                            </div>
+
+                            <h3>Digital Marketing & Growth</h3>
+
+                            <p>
+                                Data-driven marketing strategies that increase
+                                your visibility, traffic, and conversions.
+                            </p>
+
+                            <ul class="list-unstyled mt-4 flex-grow-1">
+
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    SEO & Local SEO
+                                </li>
+
+                                <li class="mb-2">
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Google Ads & Paid Campaigns
+                                </li>
+
+                                <li>
+                                    <i class="fas fa-check-circle text-success me-2"></i>
+                                    Content Marketing & Copywriting
+                                </li>
+
+                            </ul>
+                            <a class="learn-more-link mt-3" href="service.html#marketing">Learn More <i class="fa-solid fa-arrow-right"></i></a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- ========================================
+             TEAM / ABOUT SECTION
+        ========================================= -->
+        <section class="about-section py-5">
+            <div class="container">
+
+                <!-- Section Heading -->
+                <div class="text-center mb-5">
+
+                    <span class="section-label">
+                        MEET OUR TEAM
+                    </span>
+
+                    <h2 class="fw-bold mt-3">
+                        People Behind <span class="text-pink">Fasla</span><span class="text-blue">x</span>
+                    </h2>
+
+                    <p class="mt-3">
+                        A passionate team of creatives, developers, and strategists working together to bring your vision to life.
+                    </p>
+
+                </div>
+
+                <!-- Team Members -->
+                <div class="row g-4 mb-5">
+
+                    <div class="col-6 col-md-3">
+                        <div class="profile-card text-center">
+
+                            <img src="Images/team1.jpg"
+                                alt="Fasil Chola"
+                                class="img-fluid rounded-circle mb-3">
+
+                            <h5>Fasil Chola</h5>
+
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="profile-card text-center">
+
+                            <img src="Images/team2.jpg"
+                                alt="Sree Lakshmi Fasil"
+                                class="img-fluid rounded-circle mb-3">
+
+                            <h5>Sree Lakshmi Fasil</h5>
+
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="profile-card text-center">
+
+                            <img src="Images/team3.jpg"
+                                alt="Jasina Raveendran"
+                                class="img-fluid rounded-circle mb-3">
+
+                            <h5>Jasina Raveendran</h5>
+
+                        </div>
+                    </div>
+
+                    <div class="col-6 col-md-3">
+                        <div class="profile-card text-center">
+
+                            <img src="Images/team4.jpg"
+                                alt="Devu Kesav"
+                                class="img-fluid rounded-circle mb-3">
+
+                            <h5>Devu Kesav</h5>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- About Cards -->
+                <div class="row g-4">
+
+                    <div class="col-md-4">
+                        <div class="about-card p-4 text-center h-100">
+
+                            <i class="fa-solid fa-people-group fa-2x mb-3"></i>
+
+                            <h4>Collaborative Teamwork</h4>
+
+                            <p>
+                                We work together, think together,
+                                and grow together.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="about-card p-4 text-center h-100">
+
+                            <i class="fa-solid fa-lightbulb fa-2x mb-3"></i>
+
+                            <h4>Result-Driven Approach</h4>
+
+                            <p>
+                                Your goals are our mission.
+                                We deliver measurable results.
+                            </p>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="about-card p-4 text-center h-100">
+
+                            <i class="fa-solid fa-handshake fa-2x mb-3"></i>
+
+                            <h4>Commitment You Can Trust</h4>
+
+                            <p>
+                                Your vision is our priority. We deliver quality and long-term value.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+        <!-- ========================================
+             CTA SECTION
+        ========================================= -->
+        <section class="cta-section py-5">
+            <div class="container">
+
+                <div class="footer-cta text-center p-5">
+
+                    <h3>
+                        Ready to Take Your Business to the Next Level?
+                    </h3>
+
+                    <p class="mt-3">
+                        Let's build, design, and scale your digital presence together.
+                    </p>
+
+                    <a href="https://wa.me/917034377648"
+                        class="btn btn-success mt-3">
+
+                        <i class="fa-brands fa-whatsapp me-2"></i>
+                        Let's Talk About Your Project
+                    </a>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================
+         FOOTER
+    ========================================= -->
+    <footer class="footer-section pt-4 pb-3">
+
+        <div class="container">
+
+            <!-- Main footer row: left col + right cols aligned at bottom -->
+            <div class="row align-items-end footer-main-row">
+
+                <!-- ── LEFT COLUMN: Logo + description + social ── -->
+                <div class="col-lg-4 d-flex flex-column footer-left-col">
+
+                    <img src="Images/Logo.png"
+                        alt="FasLax Logo"
+                        class="footer-logo">
+
+                    <p class="footer-desc">
+                        We provide complete web development,
+                        graphic design, and digital marketing
+                        solutions to help your business grow online.
+                    </p>
+
+                    <!-- Social icons — these align with the last link row on the right -->
+                    <div class="social-icons d-flex gap-3">
+
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+
+                    </div>
+
+                </div>
+
+                <!-- ── RIGHT COLUMNS: Headings row + links row ── -->
+                <div class="col-lg-8">
+
+                    <!-- Headings row — all three on the same horizontal line -->
+                    <div class="row footer-headings-row mb-2">
+
+                        <div class="col-4">
+                            <h4 class="footer-col-heading">Quick Links</h4>
+                        </div>
+
+                        <div class="col-4">
+                            <h4 class="footer-col-heading">Our Services</h4>
+                        </div>
+
+                        <div class="col-4">
+                            <h4 class="footer-col-heading">Contact Info</h4>
+                        </div>
+
+                    </div>
+
+                    <!-- Links row — bottoms align with social icons on the left -->
+                    <div class="row footer-links-row align-items-end">
+
+                        <div class="col-4">
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="index.html">Home</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="about.html">About Us</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html">Services</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="portfolio.html">Portfolio</a></li>
+                                <li class="mb-0"><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4">
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#web">Web Development</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#design">Graphic Design</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#marketing">Digital Marketing</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#seo">SEO & SMM</a></li>
+                                <li class="mb-0"><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#hosting">Domain & Hosting</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-4">
+                            <!-- 4 contact items vs 5 links — naturally ends one line higher -->
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><i class="fas fa-location-dot footer-icon-pink"></i> Kerala, India</li>
+                                <li><i class="fas fa-phone footer-icon-pink"></i> +91 70343 77648</li>
+                                <li><i class="fas fa-envelope footer-icon-pink"></i> hello@faslax.in</li>
+                                <li class="mb-0"><i class="fas fa-globe footer-icon-pink"></i> www.faslax.in</li>
+                            </ul>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Footer Bottom -->
+            <hr class="my-3">
+
+            <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom">
+
+                <p class="mb-0">
+                    © 2026 FasLax. All Rights Reserved.
+                </p>
+
+                <div class="footer-bottom-links">
+                    <a href="#">Privacy Policy</a>
+                    <span class="mx-2">|</span>
+                    <a href="#">Terms & Conditions</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+
+</html>
