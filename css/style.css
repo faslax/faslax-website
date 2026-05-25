@@ -625,6 +625,30 @@ body {
         gap: 8px;
         text-align: center;
     }
+    .footer-section hr {
+    display: none;
+}
+
+.footer-headings-row,
+.footer-links-row {
+    flex-direction: column;
+}
+
+.footer-headings-row {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.footer-links-row {
+    padding-top: 0;
+}
+
+.footer-col-heading {
+    margin-top: 1.25rem;
+    margin-bottom: 8px;
+    padding-bottom: 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+}
 }
 
 @media (max-width: 576px) {
