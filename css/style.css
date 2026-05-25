@@ -401,38 +401,22 @@ body {
     color: var(--white);
 }
 
-/* ========================================
-   FOOTER
-======================================== */
+/* FOOTER */
 .footer-section {
-    background:
-        linear-gradient(135deg,
-            var(--dark-navy),
-            #14213d,
-            var(--primary-pink));
+    background: linear-gradient(135deg, var(--dark-navy), #14213d, var(--primary-pink));
     color: var(--white);
 }
 
-/* Main row: left column bottom-aligns with right columns */
-.footer-main-row {
-    align-items: end;
-}
-
-/* Left column stacks logo → description → social with no extra top gap */
 .footer-left-col {
     gap: 14px;
-    padding-top: 0 !important;
 }
 
-/* Logo: larger so text inside is clearly readable */
 .footer-logo {
-    height: 100%;
-    width: 100%;
+    height: auto;
+    width: 160px;
     display: block;
-    margin-top: 0;
 }
 
-/* Description text under logo */
 .footer-desc {
     font-size: 14px;
     color: rgba(255, 255, 255, 0.8);
@@ -441,28 +425,22 @@ body {
     max-width: 320px;
 }
 
-/* Right-side column headings — all in the same sub-row so they're on one line */
+.footer-right-col {
+    margin-bottom: 1.5rem;
+}
+
 .footer-col-heading {
     color: var(--white);
     font-size: 16px;
     font-weight: 700;
-    margin-bottom: 0;
-    white-space: nowrap;
-}
-
-.footer-headings-row {
+    margin-bottom: 14px;
+    padding-bottom: 8px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    padding-bottom: 12px;
-}
-
-/* Link rows */
-.footer-links-row {
-    padding-top: 12px;
+    white-space: nowrap;
 }
 
 .footer-section h4 {
     color: var(--white);
-    margin-bottom: 18px;
 }
 
 .footer-section p,
@@ -513,13 +491,10 @@ body {
     transform: translateY(-5px);
 }
 
-.footer-section hr {
-    border-color: rgba(255, 255, 255, 0.15);
-}
-
-/* CHANGE 5: Copyright left, policy links right — single row */
 .footer-bottom {
     font-size: 14px;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    padding-top: 1rem;
 }
 
 .footer-bottom p {
@@ -616,8 +591,20 @@ body {
         text-align: center;
     }
 
+    .footer-logo {
+        margin: 0 auto;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+    }
+
     .social-icons {
         justify-content: center;
+    }
+
+    .footer-col-heading {
+        margin-top: 0.5rem;
     }
 
     .footer-bottom {
@@ -625,31 +612,8 @@ body {
         gap: 8px;
         text-align: center;
     }
-    .footer-section hr {
-    display: none;
 }
 
-.footer-headings-row,
-.footer-links-row {
-    flex-direction: column;
-}
-
-.footer-headings-row {
-    border-bottom: none;
-    padding-bottom: 0;
-}
-
-.footer-links-row {
-    padding-top: 0;
-}
-
-.footer-col-heading {
-    margin-top: 1.25rem;
-    margin-bottom: 8px;
-    padding-bottom: 6px;
-    border-bottom: 1px solid rgba(255,255,255,0.15);
-}
-}
 
 @media (max-width: 576px) {
 
