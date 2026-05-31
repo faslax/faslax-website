@@ -11,6 +11,57 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages.css">
+
+    <style>
+        /* Budget dropdown transition */
+        .budget-wrapper {
+            position: relative;
+        }
+        .budget-badge {
+            display: inline-block;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 2px 8px;
+            border-radius: 20px;
+            margin-left: 6px;
+            vertical-align: middle;
+            background: linear-gradient(135deg, #e91e8c, #ff6b6b);
+            color: #fff;
+        }
+        .budget-hint {
+            font-size: 11.5px;
+            color: #888;
+            margin-top: 5px;
+            min-height: 18px;
+            transition: opacity 0.25s;
+        }
+        /* Animate select change */
+        @keyframes budgetPop {
+            0%   { transform: scale(0.97); opacity: 0.5; }
+            100% { transform: scale(1);    opacity: 1; }
+        }
+        .budget-animate {
+            animation: budgetPop 0.22s ease;
+        }
+        /* Service badge on select */
+        .service-tag {
+            display: none;
+            align-items: center;
+            gap: 7px;
+            background: #fff0f6;
+            border: 1px solid #ffd6ea;
+            border-radius: 8px;
+            padding: 6px 12px;
+            margin-top: 7px;
+            font-size: 12px;
+            color: #c9186c;
+            font-weight: 600;
+        }
+        .service-tag.show { display: flex; }
+        .service-tag i { font-size: 13px; }
+    </style>
 </head>
 <body>
 
@@ -116,7 +167,7 @@
                             Thank you! Your message has been sent. We'll get back to you within 24 hours.
                         </div>
 
-                        <form id="contactForm" novalidate>
+                        <form id="contactForm" name="contact" method="POST" data-netlify="true" novalidate>
                             <div class="row g-3">
                                 <div class="col-md-6">
                                     <label class="form-label fw-600">Full Name <span class="text-pink">*</span></label>
@@ -132,30 +183,41 @@
                                     <label class="form-label fw-600">Phone Number</label>
                                     <input type="tel" class="form-control contact-input" id="phone" name="phone" placeholder="E.g:- +00 12345 67890">
                                 </div>
+
+                                <!-- SERVICE SELECT -->
                                 <div class="col-md-6">
                                     <label class="form-label fw-600">Service Needed <span class="text-pink">*</span></label>
                                     <select class="form-select contact-input" id="service" name="service" required>
                                         <option value="" disabled selected>Select a service</option>
-                                        <option>Web Development</option>
-                                        <option>Graphic Design</option>
-                                        <option>Digital Marketing</option>
-                                        <option>SEO & SMM</option>
-                                        <option>Domain & Hosting</option>
-                                        <option>Complete Package</option>
+                                        <option value="web">Web Development</option>
+                                        <option value="design">Graphic Design</option>
+                                        <option value="logo">Logo Design</option>
+                                        <option value="social">Social Media Posters</option>
+                                        <option value="marketing">Digital Marketing</option>
+                                        <option value="seo">SEO &amp; SMM</option>
+                                        <option value="hosting">Domain &amp; Hosting</option>
+                                        <option value="complete">Complete Package</option>
                                     </select>
                                     <div class="invalid-feedback">Please select a service.</div>
+                                    <!-- Service hint tag -->
+                                    <div class="service-tag" id="serviceTag">
+                                        <i class="fas fa-tag"></i>
+                                        <span id="serviceTagText"></span>
+                                    </div>
                                 </div>
-                                <div class="col-12">
-                                    <label class="form-label fw-600">Budget Range</label>
+
+                                <!-- DYNAMIC BUDGET SELECT -->
+                                <div class="col-12 budget-wrapper">
+                                    <label class="form-label fw-600">
+                                        Budget Range
+                                        <span class="budget-badge" id="budgetBadge" style="display:none;">Per Package</span>
+                                    </label>
                                     <select class="form-select contact-input" id="budget" name="budget">
                                         <option value="" disabled selected>Select your budget</option>
-                                        <option>Under ₹10,000 (Under $250)</option>
-                                        <option>₹10,000 – ₹25,000 ($250 - $500)</option>
-                                        <option>₹25,000 – ₹50,000 ($500 - $1000)</option>
-                                        <option>₹50,000 – ₹1,00,000 ($1000 - $2000)</option>
-                                        <option>Above ₹1,00,000 (Above $2000)</option>
                                     </select>
+                                    <p class="budget-hint" id="budgetHint"></p>
                                 </div>
+
                                 <div class="col-12">
                                     <label class="form-label fw-600">Project Details <span class="text-pink">*</span></label>
                                     <textarea class="form-control contact-input" id="message" name="message" rows="5" placeholder="Tell us about your project, goals, timeline, and any specific requirements..." required></textarea>
@@ -237,33 +299,22 @@
 
 <footer class="footer-section pt-4 pb-3">
     <div class="container">
-
         <div class="row footer-main-row">
-
-            <!-- LEFT COLUMN: Logo + description + social -->
             <div class="col-lg-4 d-flex flex-column footer-left-col mb-4 mb-lg-0">
-
                 <img src="./Images/Logo.png" alt="FasLax Logo" class="footer-logo">
-
                 <p class="footer-desc">
                     We provide complete web development, graphic design, and digital marketing
                     solutions to help your business grow online.
                 </p>
-
                 <div class="social-icons d-flex gap-3">
                     <a href="#"><i class="fa-brands fa-facebook"></i></a>
                     <a href="#"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
-
             </div>
-
-            <!-- RIGHT COLUMNS: Quick Links + Our Services + Contact Info -->
             <div class="col-lg-8">
                 <div class="row">
-
-                    <!-- Quick Links -->
                     <div class="col-12 col-md-4 footer-right-col">
                         <h4 class="footer-col-heading">Quick Links</h4>
                         <ul class="list-unstyled footer-links mb-0">
@@ -274,20 +325,16 @@
                             <li class="mb-0"><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="contact.html">Contact</a></li>
                         </ul>
                     </div>
-
-                    <!-- Our Services -->
                     <div class="col-12 col-md-4 footer-right-col">
                         <h4 class="footer-col-heading">Our Services</h4>
                         <ul class="list-unstyled footer-links mb-0">
                             <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#web">Web Development</a></li>
                             <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#design">Graphic Design</a></li>
                             <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#marketing">Digital Marketing</a></li>
-                            <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#seo">SEO & SMM</a></li>
-                            <li class="mb-0"><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#hosting">Domain & Hosting</a></li>
+                            <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#seo">SEO &amp; SMM</a></li>
+                            <li class="mb-0"><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#hosting">Domain &amp; Hosting</a></li>
                         </ul>
                     </div>
-
-                    <!-- Contact Info -->
                     <div class="col-12 col-md-4 footer-right-col">
                         <h4 class="footer-col-heading">Contact Info</h4>
                         <ul class="list-unstyled footer-links mb-0">
@@ -297,27 +344,342 @@
                             <li class="mb-0"><i class="fas fa-globe footer-icon-pink me-1"></i> www.faslax.in</li>
                         </ul>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
-        <!-- Footer Bottom -->
         <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom mt-4">
             <p class="mb-0">© 2026 FasLax. All Rights Reserved.</p>
             <div class="footer-bottom-links">
                 <a href="privacy.html">Privacy Policy</a>
                 <span class="mx-2">|</span>
-                <a href="terms.html">Terms & Conditions</a>
+                <a href="terms.html">Terms &amp; Conditions</a>
             </div>
         </div>
-
     </div>
 </footer>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
 <script>
+// ════════════════════════════════════════════════════════════════════════════
+//  FASLAX CONTACT FORM — Smart Currency System
+//  • Indian visitors  → INR prices (fresher-friendly rates)
+//  • All other visitors → USD prices converted to their local currency live
+// ════════════════════════════════════════════════════════════════════════════
+
+// ─── Base prices in USD (for international clients, fresher rates) ───────────
+// Indian INR prices are stored separately and never converted — they are fixed.
+const serviceBudgets = {
+
+    web: {
+        tag: "💻 Web Development",
+        inr: [
+            { label: "Starter – Landing Page",      lo: 500,   hi: 1500  },
+            { label: "Business – 5 Page Website",   lo: 1500,  hi: 5000  },
+            { label: "E-Commerce – Online Store",   lo: 5000,  hi: 15000 },
+            { label: "Custom Web Application",      lo: 15000, hi: 40000 },
+            { label: "Enterprise / Large Scale",    lo: 40000, hi: null   },
+        ],
+        usd: [
+            { label: "Starter – Landing Page",      lo: 50,   hi: 100  },
+            { label: "Business – 5 Page Website",   lo: 100,  hi: 300  },
+            { label: "E-Commerce – Online Store",   lo: 300,  hi: 700  },
+            { label: "Custom Web Application",      lo: 700,  hi: 1500 },
+            { label: "Enterprise / Large Scale",    lo: 1500, hi: null  },
+        ]
+    },
+
+    design: {
+        tag: "🎨 Graphic Design",
+        inr: [
+            { label: "Starter – 1–3 Designs",      lo: 150,  hi: 500   },
+            { label: "Basic – Up to 5 Designs",     lo: 500,  hi: 1500  },
+            { label: "Standard – Design Package",   lo: 1500, hi: 4000  },
+            { label: "Premium – Full Brand Kit",    lo: 4000, hi: 10000 },
+            { label: "Enterprise Branding Suite",   lo: 10000,hi: null  },
+        ],
+        usd: [
+            { label: "Starter – 1–3 Designs",      lo: 20,  hi: 50  },
+            { label: "Basic – Up to 5 Designs",     lo: 50,  hi: 120 },
+            { label: "Standard – Design Package",   lo: 120, hi: 300 },
+            { label: "Premium – Full Brand Kit",    lo: 300, hi: 700 },
+            { label: "Enterprise Branding Suite",   lo: 700, hi: null },
+        ]
+    },
+
+    logo: {
+        tag: "✏️ Logo Design",
+        inr: [
+            { label: "Basic – 1 Concept, 2 Revisions",      lo: 300,  hi: 700  },
+            { label: "Standard – 3 Concepts, 5 Revisions",  lo: 700,  hi: 2000 },
+            { label: "Professional – Full Logo Suite",       lo: 2000, hi: 5000 },
+            { label: "Premium – Brand Identity Pack",        lo: 5000, hi: 12000},
+            { label: "Enterprise Brand System",              lo: 12000,hi: null },
+        ],
+        usd: [
+            { label: "Basic – 1 Concept, 2 Revisions",      lo: 30,  hi: 60  },
+            { label: "Standard – 3 Concepts, 5 Revisions",  lo: 60,  hi: 150 },
+            { label: "Professional – Full Logo Suite",       lo: 150, hi: 350 },
+            { label: "Premium – Brand Identity Pack",        lo: 350, hi: 700 },
+            { label: "Enterprise Brand System",              lo: 700, hi: null },
+        ]
+    },
+
+    social: {
+        tag: "📱 Social Media Posters",
+        inr: [
+            { label: "Starter – 5 Posts / Month",    lo: 500,  hi: 1000, sfx: "/ mo" },
+            { label: "Basic – 10 Posts / Month",     lo: 1000, hi: 2000, sfx: "/ mo" },
+            { label: "Standard – 20 Posts / Month",  lo: 2000, hi: 4000, sfx: "/ mo" },
+            { label: "Premium – 30 Posts + Stories", lo: 4000, hi: 8000, sfx: "/ mo" },
+            { label: "Custom / Unlimited Package",   lo: 8000, hi: null,  sfx: "/ mo" },
+        ],
+        usd: [
+            { label: "Starter – 5 Posts / Month",    lo: 40,  hi: 80,  sfx: "/ mo" },
+            { label: "Basic – 10 Posts / Month",     lo: 80,  hi: 150, sfx: "/ mo" },
+            { label: "Standard – 20 Posts / Month",  lo: 150, hi: 300, sfx: "/ mo" },
+            { label: "Premium – 30 Posts + Stories", lo: 300, hi: 500, sfx: "/ mo" },
+            { label: "Custom / Unlimited Package",   lo: 500, hi: null, sfx: "/ mo" },
+        ]
+    },
+
+    marketing: {
+        tag: "📣 Digital Marketing",
+        inr: [
+            { label: "Starter – Basic Ads Setup",       lo: 2000,  hi: 5000,  sfx: "/ mo" },
+            { label: "Growth – Monthly Campaigns",      lo: 5000,  hi: 10000, sfx: "/ mo" },
+            { label: "Pro – Multi-Platform Marketing",  lo: 10000, hi: 20000, sfx: "/ mo" },
+            { label: "Scale – Full Funnel Strategy",    lo: 20000, hi: 40000, sfx: "/ mo" },
+            { label: "Enterprise Marketing Suite",      lo: 40000, hi: null,   sfx: "/ mo" },
+        ],
+        usd: [
+            { label: "Starter – Basic Ads Setup",       lo: 80,   hi: 200,  sfx: "/ mo" },
+            { label: "Growth – Monthly Campaigns",      lo: 200,  hi: 500,  sfx: "/ mo" },
+            { label: "Pro – Multi-Platform Marketing",  lo: 500,  hi: 1000, sfx: "/ mo" },
+            { label: "Scale – Full Funnel Strategy",    lo: 1000, hi: 2000, sfx: "/ mo" },
+            { label: "Enterprise Marketing Suite",      lo: 2000, hi: null,  sfx: "/ mo" },
+        ]
+    },
+
+    seo: {
+        tag: "🔍 SEO & SMM",
+        inr: [
+            { label: "Basic – Local SEO + 2 Platforms",   lo: 1500,  hi: 4000,  sfx: "/ mo" },
+            { label: "Standard – National SEO + SMM",     lo: 4000,  hi: 8000,  sfx: "/ mo" },
+            { label: "Pro – SEO + Full Social Strategy",  lo: 8000,  hi: 15000, sfx: "/ mo" },
+            { label: "Premium – Authority Growth Plan",   lo: 15000, hi: 30000, sfx: "/ mo" },
+            { label: "Enterprise SEO & Social",           lo: 30000, hi: null,   sfx: "/ mo" },
+        ],
+        usd: [
+            { label: "Basic – Local SEO + 2 Platforms",   lo: 60,  hi: 150,  sfx: "/ mo" },
+            { label: "Standard – National SEO + SMM",     lo: 150, hi: 350,  sfx: "/ mo" },
+            { label: "Pro – SEO + Full Social Strategy",  lo: 350, hi: 700,  sfx: "/ mo" },
+            { label: "Premium – Authority Growth Plan",   lo: 700, hi: 1500, sfx: "/ mo" },
+            { label: "Enterprise SEO & Social",           lo: 1500,hi: null,  sfx: "/ mo" },
+        ]
+    },
+
+    hosting: {
+        tag: "🌐 Domain & Hosting",
+        inr: [
+            { label: "Shared Hosting – 1 Year",       lo: 1000, hi: 2500,  sfx: "/ yr" },
+            { label: "Business Hosting + SSL",        lo: 2500, hi: 6000,  sfx: "/ yr" },
+            { label: "VPS Hosting + Maintenance",     lo: 6000, hi: 15000, sfx: "/ yr" },
+            { label: "Dedicated Server + Support",    lo: 15000,hi: 35000, sfx: "/ yr" },
+            { label: "Managed Cloud Hosting",         lo: 35000,hi: null,   sfx: "/ yr" },
+        ],
+        usd: [
+            { label: "Shared Hosting – 1 Year",       lo: 30,  hi: 80,   sfx: "/ yr" },
+            { label: "Business Hosting + SSL",        lo: 80,  hi: 200,  sfx: "/ yr" },
+            { label: "VPS Hosting + Maintenance",     lo: 200, hi: 500,  sfx: "/ yr" },
+            { label: "Dedicated Server + Support",    lo: 500, hi: 1200, sfx: "/ yr" },
+            { label: "Managed Cloud Hosting",         lo: 1200,hi: null,  sfx: "/ yr" },
+        ]
+    },
+
+    complete: {
+        tag: "🚀 Complete Package",
+        inr: [
+            { label: "Startup Bundle – Web + Logo",            lo: 2000,  hi: 6000   },
+            { label: "Business Bundle – Web + Design + SEO",   lo: 6000,  hi: 15000  },
+            { label: "Growth Bundle – Full Digital Presence",  lo: 15000, hi: 35000  },
+            { label: "Pro Bundle – All Services + Marketing",  lo: 35000, hi: 80000  },
+            { label: "Enterprise – Custom Everything",         lo: 80000, hi: null    },
+        ],
+        usd: [
+            { label: "Startup Bundle – Web + Logo",            lo: 100,  hi: 300  },
+            { label: "Business Bundle – Web + Design + SEO",   lo: 300,  hi: 800  },
+            { label: "Growth Bundle – Full Digital Presence",  lo: 800,  hi: 2000 },
+            { label: "Pro Bundle – All Services + Marketing",  lo: 2000, hi: 5000 },
+            { label: "Enterprise – Custom Everything",         lo: 5000, hi: null  },
+        ]
+    }
+};
+
+const defaultINR = [
+    { label: "Small Budget",  lo: 500,   hi: 2000  },
+    { label: "Moderate",      lo: 2000,  hi: 8000  },
+    { label: "Standard",      lo: 8000,  hi: 25000 },
+    { label: "Premium",       lo: 25000, hi: 60000 },
+    { label: "Enterprise",    lo: 60000, hi: null   },
+];
+const defaultUSD = [
+    { label: "Small Budget",  lo: 50,   hi: 200   },
+    { label: "Moderate",      lo: 200,  hi: 700   },
+    { label: "Standard",      lo: 700,  hi: 2000  },
+    { label: "Premium",       lo: 2000, hi: 5000  },
+    { label: "Enterprise",    lo: 5000, hi: null   },
+];
+
+// ─── State ───────────────────────────────────────────────────────────────────
+let userIsIndia   = false;   // set after geo lookup
+let fxRate        = 1;       // USD → local currency rate
+let fxSymbol      = '$';     // local currency symbol
+let fxCode        = 'USD';   // local currency code
+let currentService = null;
+
+// ─── Elements ────────────────────────────────────────────────────────────────
+const serviceEl    = document.getElementById('service');
+const budgetEl     = document.getElementById('budget');
+const budgetHint   = document.getElementById('budgetHint');
+const budgetBadge  = document.getElementById('budgetBadge');
+const serviceTag   = document.getElementById('serviceTag');
+const serviceTagTx = document.getElementById('serviceTagText');
+
+// ─── Formatting helpers ───────────────────────────────────────────────────────
+function fmtINR(n) {
+    // Indian number formatting: ₹1,500 / ₹1,00,000
+    if (n >= 100000) {
+        const lakh = n / 100000;
+        return '₹' + (Number.isInteger(lakh) ? lakh : lakh.toFixed(1)) + ' Lakh';
+    }
+    return '₹' + n.toLocaleString('en-IN');
+}
+
+function fmtLocal(usd) {
+    const val = Math.round(usd * fxRate);
+    // Format with commas
+    return fxSymbol + val.toLocaleString();
+}
+
+function buildLabel(item, isIndia) {
+    const sfx = item.sfx ? ' ' + item.sfx : '';
+    if (isIndia) {
+        const lo = fmtINR(item.lo);
+        return item.hi
+            ? `${item.label}  —  ${lo} – ${fmtINR(item.hi)}${sfx}`
+            : `${item.label}  —  Above ${lo}${sfx}`;
+    } else {
+        const lo = fmtLocal(item.lo);
+        return item.hi
+            ? `${item.label}  —  ${lo} – ${fmtLocal(item.hi)}${sfx}`
+            : `${item.label}  —  Above ${lo}${sfx}`;
+    }
+}
+
+// ─── Build dropdown ───────────────────────────────────────────────────────────
+function buildBudgetOptions(items, isIndia) {
+    budgetEl.innerHTML = '<option value="" disabled selected>Select your budget</option>';
+    items.forEach(item => {
+        const opt = document.createElement('option');
+        opt.textContent = buildLabel(item, isIndia);
+        opt.value = opt.textContent;
+        budgetEl.appendChild(opt);
+    });
+    budgetEl.classList.remove('budget-animate');
+    void budgetEl.offsetWidth;
+    budgetEl.classList.add('budget-animate');
+}
+
+function refreshBudget() {
+    const key  = currentService;
+    const data = key ? serviceBudgets[key] : null;
+
+    if (data) {
+        const items = userIsIndia ? data.inr : data.usd;
+        buildBudgetOptions(items, userIsIndia);
+        const hintText = userIsIndia
+            ? 'Prices shown in Indian Rupees (₹)'
+            : `Prices shown in ${fxCode} (converted from USD)`;
+        budgetHint.textContent    = hintText;
+        budgetBadge.style.display = 'inline-block';
+        serviceTagTx.textContent  = data.tag;
+        serviceTag.classList.add('show');
+    } else {
+        const items = userIsIndia ? defaultINR : defaultUSD;
+        buildBudgetOptions(items, userIsIndia);
+        budgetHint.textContent    = '';
+        budgetBadge.style.display = 'none';
+        serviceTag.classList.remove('show');
+    }
+}
+
+// ─── Service change ───────────────────────────────────────────────────────────
+serviceEl.addEventListener('change', function () {
+    currentService = this.value || null;
+    refreshBudget();
+});
+
+// ─── Geo + Currency detection ─────────────────────────────────────────────────
+async function initCurrency() {
+    try {
+        // 1. Detect country via free IP geo API
+        const geoRes  = await fetch('https://ipapi.co/json/');
+        const geoData = await geoRes.json();
+        const country  = geoData.country_code || 'US';
+        const currency = geoData.currency      || 'USD';
+
+        if (country === 'IN') {
+            userIsIndia = true;
+            fxRate   = 1;
+            fxSymbol = '₹';
+            fxCode   = 'INR';
+        } else {
+            userIsIndia = false;
+            fxCode   = currency;
+
+            // Currency symbols for common currencies
+            const symbols = {
+                USD:'$', EUR:'€', GBP:'£', AED:'AED ', SAR:'SAR ', KWD:'KWD ',
+                QAR:'QAR ', BHD:'BHD ', OMR:'OMR ', SGD:'S$', AUD:'A$',
+                CAD:'C$', MYR:'RM ', LKR:'LKR ', PKR:'PKR ', BDT:'৳',
+                NPR:'NPR ', MUR:'MUR ', ZAR:'R ', NGN:'₦', KES:'KSh ',
+                GHS:'GH₵', EGP:'E£ ', JPY:'¥', CNY:'¥', HKD:'HK$',
+                NZD:'NZ$', CHF:'CHF ', SEK:'kr ', NOK:'kr ', DKK:'kr ',
+                MXN:'MX$', BRL:'R$', ARS:'$', CLP:'$', COP:'$',
+                THB:'฿', IDR:'Rp ', PHP:'₱', VND:'₫', TWD:'NT$',
+            };
+            fxSymbol = symbols[currency] || (currency + ' ');
+
+            // 2. Get live exchange rate (USD → user's currency)
+            if (currency !== 'USD') {
+                try {
+                    const fxRes  = await fetch(`https://api.exchangerate-api.com/v4/latest/USD`);
+                    const fxData = await fxRes.json();
+                    fxRate = fxData.rates[currency] || 1;
+                } catch {
+                    // If exchange API fails, fall back to USD
+                    fxRate   = 1;
+                    fxSymbol = '$';
+                    fxCode   = 'USD';
+                }
+            }
+        }
+    } catch {
+        // Geo failed — default to USD, no India assumption
+        userIsIndia = false;
+        fxRate = 1; fxSymbol = '$'; fxCode = 'USD';
+    }
+
+    // Re-render budget with correct currency
+    refreshBudget();
+}
+
+// Boot — show USD defaults immediately, then geo will correct it
+refreshBudget();
+initCurrency();
+
+// ─── Form validation ──────────────────────────────────────────────────────────
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
     if (!this.checkValidity()) {
@@ -327,6 +689,11 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
     document.getElementById('formSuccess').classList.remove('d-none');
     this.reset();
     this.classList.remove('was-validated');
+    currentService = null;
+    refreshBudget();
+    budgetHint.textContent    = '';
+    budgetBadge.style.display = 'none';
+    serviceTag.classList.remove('show');
     window.scrollTo({ top: document.getElementById('formSuccess').offsetTop - 100, behavior: 'smooth' });
 });
 </script>
