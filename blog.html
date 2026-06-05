@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Blog – Digital Insights & Web Tips | FasLax</title>
+    <meta name="description" content="Stay ahead with FasLax's blog — practical guides on web development, SEO, digital marketing, and branding for businesses in Kerala and beyond.">
+    <link rel="canonical" href="https://faslax.in/blog.html">
+
+    <meta property="og:title" content="Blog – Digital Insights & Web Tips | FasLax">
+    <meta property="og:description" content="Practical guides on web development, SEO, digital marketing, and branding.">
+    <meta property="og:image" content="https://faslax.in/og-preview.jpg">
+    <meta property="og:url" content="https://faslax.in/blog.html">
+    <meta property="og:type" content="website">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700;800&display=swap" rel="stylesheet">
+
+    <!-- Site stylesheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pages.css">
+    <link rel="stylesheet" href="css/blog.css">
+</head>
+
+<body>
+
+    <!-- ========================================
+         NAVBAR
+    ======================================== -->
+    <header>
+        <nav class="navbar navbar-expand-lg main-nav">
+            <div class="container">
+
+                <a class="navbar-brand logo" href="index.html">
+                    <img src="./Images/Logo.png" alt="FasLax Logo">
+                </a>
+
+                <button class="navbar-toggler border-0 shadow-none"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#faslaxNavbar">
+                    <i class="fa-solid fa-bars-staggered"></i>
+                </button>
+
+                <div class="collapse navbar-collapse justify-content-end" id="faslaxNavbar">
+                    <ul class="navbar-nav align-items-lg-center gap-lg-3">
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="about.html">About Us</a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle"
+                                href="service.html"
+                                role="button"
+                                data-bs-toggle="dropdown">
+                                Services
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="service.html#web">Web Development</a></li>
+                                <li><a class="dropdown-item" href="service.html#design">Graphic Design</a></li>
+                                <li><a class="dropdown-item" href="service.html#marketing">Digital Marketing</a></li>
+                                <li><a class="dropdown-item" href="service.html#seo">SEO &amp; SMM</a></li>
+                                <li><a class="dropdown-item" href="service.html#hosting">Domain &amp; Hosting</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="portfolio.html">Portfolio</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active" href="blog.html">Blog</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" href="contact.html">Contact</a>
+                        </li>
+
+                    </ul>
+
+                    <div class="ms-lg-4 mt-3 mt-lg-0">
+                        <a href="contact.html" class="btn btn-primary">Request a Quote</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- ========================================
+             HERO
+        ======================================== -->
+        <section class="blog-listing-hero">
+            <div class="container">
+                <div class="hero-eyebrow">
+                    <i class="fa-solid fa-pen-nib"></i> FasLax Blog
+                </div>
+                <h1>Digital Insights to <span>Grow</span> Your Business</h1>
+                <p>Practical guides on web development, SEO, branding, and digital marketing — written by our team in Kerala for businesses everywhere.</p>
+                <div class="blog-search-wrap">
+                    <input type="text" id="blogSearch" placeholder="Search articles…" oninput="filterCards()">
+                    <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats Bar -->
+        <div class="blog-stats-bar">
+            <div class="container">
+                <div class="stats-inner">
+                    <div class="stat-pill"><i class="fa-solid fa-file-lines"></i> <strong>1</strong> Published Article</div>
+                    <div class="stat-pill"><i class="fa-solid fa-layer-group"></i> <strong>5</strong> Topics Covered</div>
+                    <div class="stat-pill"><i class="fa-solid fa-users"></i> Growing Every Week</div>
+                    <div class="stat-pill"><i class="fa-solid fa-location-dot"></i> Made in Kerala</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+             FILTER TABS
+        ======================================== -->
+        <div class="blog-filter-row">
+            <div class="container">
+                <div class="filter-tabs">
+                    <span class="filter-label">Filter:</span>
+                    <button class="filter-btn active" onclick="filterByCategory('all', this)">All Posts</button>
+                    <button class="filter-btn" onclick="filterByCategory('web', this)">Web Development</button>
+                    <button class="filter-btn" onclick="filterByCategory('seo', this)">SEO &amp; SMM</button>
+                    <button class="filter-btn" onclick="filterByCategory('design', this)">Graphic Design</button>
+                    <button class="filter-btn" onclick="filterByCategory('marketing', this)">Digital Marketing</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- ========================================
+             MAIN CONTENT
+        ======================================== -->
+        <div class="container">
+            <div class="row gy-4 mt-0">
+
+                <!-- ── LEFT COLUMN ── -->
+                <div class="col-lg-8">
+
+                    <!-- Featured Post -->
+                    <section class="featured-section">
+                        <div class="section-label">
+                            <i class="fa-solid fa-star"></i> Featured Post
+                        </div>
+
+                        <div class="featured-card" data-category="web" data-title="why a website is a must-have for travel agencies">
+                            <div class="row g-0">
+                                <div class="col-md-5">
+                                    <div class="featured-visual" style="height:100%; min-height:260px;">
+                                        <div class="featured-visual-icon">✈️</div>
+                                        <div class="featured-float-tags">
+                                            <span class="ftag"><i class="fa-solid fa-moon"></i> 24/7 Online</span>
+                                            <span class="ftag"><i class="fa-solid fa-globe"></i> Global Reach</span>
+                                            <span class="ftag"><i class="fa-solid fa-star"></i> Build Trust</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-7">
+                                    <div class="featured-body">
+                                        <div style="display:flex; align-items:center; flex-wrap:wrap; gap:6px; margin-bottom:1rem;">
+                                            <span class="post-category" style="margin-bottom:0;">
+                                                <i class="fa-solid fa-globe"></i> Travel &amp; Web Strategy
+                                            </span>
+                                            <span class="featured-badge"><i class="fa-solid fa-fire"></i> Featured</span>
+                                        </div>
+                                        <h2>
+                                            <a href="/blog/blog-travel-agency.html">Why a Website is a Must-Have, Not a Luxury, for Travel Agencies</a>
+                                        </h2>
+                                        <p class="excerpt">In today's digital-first world, the journey begins with a Google search. Discover the 7 powerful reasons every travel agency needs a professional website to stay competitive and grow bookings.</p>
+                                        <div class="post-meta">
+                                            <span class="mi"><i class="fa-solid fa-user"></i> Devu Kesav</span>
+                                            <span class="mi"><i class="fa-solid fa-calendar-alt"></i> June 2026</span>
+                                            <span class="mi"><i class="fa-solid fa-clock"></i> 6 min read</span>
+                                        </div>
+                                        <a href="/blog/blog-travel-agency.html" class="btn-read">
+                                            Read Article <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- All Posts Grid -->
+                    <section class="posts-grid-section">
+                        <div class="section-label">
+                            <i class="fa-solid fa-grid-2"></i> All Articles
+                        </div>
+
+                        <div class="row g-4" id="postsGrid">
+
+                            <!-- Post 1 – Live -->
+                            <div class="col-sm-6" data-category="web" data-title="why a website is a must-have for travel agencies">
+                                <div class="post-card">
+                                    <div class="card-visual cv-blue">
+                                        <div class="card-visual-icon">✈️</div>
+                                        <div class="card-visual-num">01</div>
+                                    </div>
+                                    <div class="card-body-inner">
+                                        <span class="post-category">
+                                            <i class="fa-solid fa-globe"></i> Web Strategy
+                                        </span>
+                                        <h3>
+                                            <a href="blog-travel-agency.html">Why a Website is a Must-Have for Travel Agencies</a>
+                                        </h3>
+                                        <p>7 powerful reasons every travel agency needs a professional website to attract more clients and grow bookings online.</p>
+                                        <div class="card-footer-row">
+                                            <span class="card-meta-small"><i class="fa-solid fa-clock"></i> 6 min read</span>
+                                            <a href="blog-travel-agency.html" class="btn-read-sm">
+                                                Read <i class="fa-solid fa-arrow-right"></i>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 2 – Coming Soon -->
+                            <div class="col-sm-6" data-category="seo" data-title="seo basics every small business must know in 2026">
+                                <div class="post-card coming-soon">
+                                    <div class="card-visual cv-green">
+                                        <span class="coming-soon-badge">Coming Soon</span>
+                                        <div class="card-visual-icon">🔍</div>
+                                        <div class="card-visual-num">02</div>
+                                    </div>
+                                    <div class="card-body-inner">
+                                        <span class="post-category" style="background:rgba(40,167,69,0.08); border-color:rgba(40,167,69,0.2); color:#28a745;">
+                                            <i class="fa-solid fa-magnifying-glass"></i> SEO
+                                        </span>
+                                        <h3>SEO Basics Every Small Business Must Know in 2026</h3>
+                                        <p>A beginner-friendly breakdown of on-page SEO, local search, and ranking signals that actually move the needle for small businesses.</p>
+                                        <div class="card-footer-row">
+                                            <span class="card-meta-small"><i class="fa-solid fa-clock"></i> ~7 min read</span>
+                                            <span class="btn-read-sm" style="opacity:0.5; cursor:default;">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 3 – Coming Soon -->
+                            <div class="col-sm-6" data-category="design" data-title="why your brand needs a professional logo">
+                                <div class="post-card coming-soon">
+                                    <div class="card-visual cv-purple">
+                                        <span class="coming-soon-badge">Coming Soon</span>
+                                        <div class="card-visual-icon">🎨</div>
+                                        <div class="card-visual-num">03</div>
+                                    </div>
+                                    <div class="card-body-inner">
+                                        <span class="post-category" style="background:rgba(111,66,193,0.08); border-color:rgba(111,66,193,0.2); color:#6f42c1;">
+                                            <i class="fa-solid fa-palette"></i> Graphic Design
+                                        </span>
+                                        <h3>Why Your Brand Needs a Professional Logo</h3>
+                                        <p>Your logo is the face of your business. Learn why investing in professional design pays off and what makes a truly memorable brand mark.</p>
+                                        <div class="card-footer-row">
+                                            <span class="card-meta-small"><i class="fa-solid fa-clock"></i> ~5 min read</span>
+                                            <span class="btn-read-sm" style="opacity:0.5; cursor:default;">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 4 – Coming Soon -->
+                            <div class="col-sm-6" data-category="marketing" data-title="google ads vs social media ads whats right for you">
+                                <div class="post-card coming-soon">
+                                    <div class="card-visual cv-amber">
+                                        <span class="coming-soon-badge">Coming Soon</span>
+                                        <div class="card-visual-icon">📢</div>
+                                        <div class="card-visual-num">04</div>
+                                    </div>
+                                    <div class="card-body-inner">
+                                        <span class="post-category" style="background:rgba(253,126,20,0.08); border-color:rgba(253,126,20,0.2); color:#fd7e14;">
+                                            <i class="fa-solid fa-bullhorn"></i> Digital Marketing
+                                        </span>
+                                        <h3>Google Ads vs Social Media Ads: What's Right for You?</h3>
+                                        <p>A clear comparison to help you choose the best paid advertising channel for your business goals and budget.</p>
+                                        <div class="card-footer-row">
+                                            <span class="card-meta-small"><i class="fa-solid fa-clock"></i> ~6 min read</span>
+                                            <span class="btn-read-sm" style="opacity:0.5; cursor:default;">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 5 – Coming Soon -->
+                            <div class="col-sm-6" data-category="web" data-title="how to make your website load faster in 2026">
+                                <div class="post-card coming-soon">
+                                    <div class="card-visual cv-teal">
+                                        <span class="coming-soon-badge">Coming Soon</span>
+                                        <div class="card-visual-icon">⚡</div>
+                                        <div class="card-visual-num">05</div>
+                                    </div>
+                                    <div class="card-body-inner">
+                                        <span class="post-category">
+                                            <i class="fa-solid fa-bolt"></i> Web Development
+                                        </span>
+                                        <h3>How to Make Your Website Load Faster in 2026</h3>
+                                        <p>Page speed directly impacts your rankings and conversions. A practical checklist of optimisations every website owner should implement.</p>
+                                        <div class="card-footer-row">
+                                            <span class="card-meta-small"><i class="fa-solid fa-clock"></i> ~8 min read</span>
+                                            <span class="btn-read-sm" style="opacity:0.5; cursor:default;">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Post 6 – Coming Soon -->
+                            <div class="col-sm-6" data-category="seo" data-title="local seo guide for kerala businesses">
+                                <div class="post-card coming-soon">
+                                    <div class="card-visual cv-navy">
+                                        <span class="coming-soon-badge">Coming Soon</span>
+                                        <div class="card-visual-icon">📍</div>
+                                        <div class="card-visual-num">06</div>
+                                    </div>
+                                    <div class="card-body-inner">
+                                        <span class="post-category" style="background:rgba(40,167,69,0.08); border-color:rgba(40,167,69,0.2); color:#28a745;">
+                                            <i class="fa-solid fa-location-dot"></i> Local SEO
+                                        </span>
+                                        <h3>Local SEO Guide for Kerala Businesses</h3>
+                                        <p>Step-by-step strategies to dominate local search results in Kerala — from Google Business Profile to local citations and reviews.</p>
+                                        <div class="card-footer-row">
+                                            <span class="card-meta-small"><i class="fa-solid fa-clock"></i> ~7 min read</span>
+                                            <span class="btn-read-sm" style="opacity:0.5; cursor:default;">Coming Soon</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <!-- No results message -->
+                        <div id="noResults" class="text-center py-5" style="display:none;">
+                            <i class="fa-solid fa-face-meh" style="font-size:2.5rem; color:var(--text-grey); opacity:0.4;"></i>
+                            <p class="mt-3" style="color:var(--text-grey);">No articles found. Try a different search or category.</p>
+                        </div>
+
+                    </section>
+
+                    <!-- Newsletter Banner -->
+                    <div class="newsletter-banner">
+                        <h3>📬 Stay in the Loop</h3>
+                        <p>Get new articles, tips, and digital insights delivered straight to your inbox — no spam, ever.</p>
+                        <div class="newsletter-form">
+                            <input type="email" placeholder="Your email address">
+                            <button type="button">
+                                <i class="fa-solid fa-paper-plane"></i> Subscribe
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- ── SIDEBAR ── -->
+                <div class="col-lg-4">
+                    <div class="blog-list-sidebar">
+
+                        <!-- CTA Widget -->
+                        <div class="sidebar-widget cta-widget">
+                            <div class="widget-title">
+                                <i class="fa-solid fa-rocket"></i> Need a Website?
+                            </div>
+                            <p>FasLax builds fast, beautiful, SEO-powered websites for businesses across Kerala and beyond.</p>
+                            <a href="contact.html" class="btn-cta-white">
+                                <i class="fa-solid fa-arrow-right"></i> Get a Free Quote
+                            </a>
+                            <a href="https://wa.me/916238377830" target="_blank" class="btn-cta-wa">
+                                <i class="fa-brands fa-whatsapp"></i> WhatsApp Us
+                            </a>
+                        </div>
+
+                        <!-- Topics -->
+                        <div class="sidebar-widget">
+                            <div class="widget-title">
+                                <i class="fa-solid fa-tags"></i> Browse Topics
+                            </div>
+                            <div class="topics-grid">
+                                <a class="topic-pill" onclick="filterByCategory('web', null)">
+                                    <i class="fa-solid fa-code"></i> Web Dev
+                                </a>
+                                <a class="topic-pill" onclick="filterByCategory('seo', null)">
+                                    <i class="fa-solid fa-magnifying-glass"></i> SEO &amp; SMM
+                                </a>
+                                <a class="topic-pill" onclick="filterByCategory('design', null)">
+                                    <i class="fa-solid fa-palette"></i> Design
+                                </a>
+                                <a class="topic-pill" onclick="filterByCategory('marketing', null)">
+                                    <i class="fa-solid fa-bullhorn"></i> Marketing
+                                </a>
+                                <a class="topic-pill" onclick="filterByCategory('all', null)">
+                                    <i class="fa-solid fa-grid-2"></i> All Posts
+                                </a>
+                            </div>
+                        </div>
+
+                        <!-- Latest Published -->
+                        <div class="sidebar-widget">
+                            <div class="widget-title">
+                                <i class="fa-solid fa-fire"></i> Published
+                            </div>
+                            <a href="blog-travel-agency.html" class="latest-post-item">
+                                <div class="lp-icon cv-blue" style="color:#fff; font-size:1.1rem; text-align:center;">✈️</div>
+                                <div>
+                                    <div class="lp-title">Why a Website is a Must-Have for Travel Agencies</div>
+                                    <div class="lp-meta"><i class="fa-solid fa-calendar-alt" style="color:var(--primary-pink); font-size:10px; margin-right:3px;"></i> June 2026 · 6 min read</div>
+                                </div>
+                            </a>
+                        </div>
+
+                        <!-- About the Blog -->
+                        <div class="sidebar-widget">
+                            <div class="widget-title">
+                                <i class="fa-solid fa-circle-info"></i> About This Blog
+                            </div>
+                            <p style="font-size:13px; color:var(--text-grey); line-height:1.75; margin:0;">
+                                The FasLax blog is where our team shares actionable digital knowledge — from web development tutorials and SEO guides to branding advice and marketing strategies. Built from Kerala, written for growth.
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- ========================================
+             CTA SECTION
+        ======================================== -->
+        <section class="cta-section py-5 mt-3">
+            <div class="container">
+                <div class="footer-cta text-center p-5">
+                    <h3>Ready to Build Your Digital Presence?</h3>
+                    <p class="mt-3">Let's design, develop, and scale your business online together.</p>
+                    <a href="https://wa.me/916238377830" class="btn btn-success mt-3">
+                        <i class="fa-brands fa-whatsapp me-2"></i>
+                        Let's Talk About Your Project
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ========================================
+         FOOTER
+    ======================================== -->
+    <footer class="footer-section pt-4 pb-3">
+        <div class="container">
+
+            <div class="row footer-main-row">
+
+                <div class="col-lg-4 d-flex flex-column footer-left-col mb-4 mb-lg-0">
+                    <img src="./Images/Logo.png" alt="FasLax Logo" class="footer-logo">
+                    <p class="footer-desc">
+                        We provide complete web development, graphic design, and digital marketing
+                        solutions to help your business grow online.
+                    </p>
+                    <div class="social-icons d-flex gap-3">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-8">
+                    <div class="row">
+
+                        <div class="col-12 col-md-4 footer-right-col">
+                            <h4 class="footer-col-heading">Quick Links</h4>
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="index.html">Home</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="about.html">About Us</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html">Services</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="portfolio.html">Portfolio</a></li>
+                                <li class="mb-0"><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="contact.html">Contact</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-4 footer-right-col">
+                            <h4 class="footer-col-heading">Our Services</h4>
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#web">Web Development</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#design">Graphic Design</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#marketing">Digital Marketing</a></li>
+                                <li><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#seo">SEO &amp; SMM</a></li>
+                                <li class="mb-0"><i class="fa-solid fa-chevron-right footer-icon-pink"></i> <a href="service.html#hosting">Domain &amp; Hosting</a></li>
+                            </ul>
+                        </div>
+
+                        <div class="col-12 col-md-4 footer-right-col">
+                            <h4 class="footer-col-heading">Contact Info</h4>
+                            <ul class="list-unstyled footer-links mb-0">
+                                <li><i class="fas fa-location-dot footer-icon-pink me-1"></i> Kerala, India</li>
+                                <li><i class="fas fa-phone footer-icon-pink me-1"></i> +91 62383 77830</li>
+                                <li><i class="fas fa-envelope footer-icon-pink me-1"></i> hello@faslax.in</li>
+                                <li class="mb-0"><i class="fas fa-globe footer-icon-pink me-1"></i> <a href="https://faslax.in">www.faslax.in</a></li>
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="d-flex flex-wrap justify-content-between align-items-center footer-bottom mt-4">
+                <p class="mb-0">© 2026 FasLax. All Rights Reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy Policy</a>
+                    <span class="mx-2">|</span>
+                    <a href="terms.html">Terms &amp; Conditions</a>
+                </div>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // ── Filter by category ──
+        function filterByCategory(cat, btn) {
+            // Update active button
+            if (btn) {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+            }
+            const search = document.getElementById('blogSearch').value.toLowerCase().trim();
+            applyFilters(cat, search);
+        }
+
+        // ── Search filter ──
+        function filterCards() {
+            const search = document.getElementById('blogSearch').value.toLowerCase().trim();
+            const activeCat = document.querySelector('.filter-btn.active')?.dataset?.cat || 'all';
+            // read active category from button text
+            const activeBtn = document.querySelector('.filter-btn.active');
+            let cat = 'all';
+            if (activeBtn) {
+                const t = activeBtn.textContent.trim().toLowerCase();
+                if (t.includes('web')) cat = 'web';
+                else if (t.includes('seo')) cat = 'seo';
+                else if (t.includes('design')) cat = 'design';
+                else if (t.includes('marketing')) cat = 'marketing';
+            }
+            applyFilters(cat, search);
+        }
+
+        function applyFilters(cat, search) {
+            const items = document.querySelectorAll('#postsGrid > .col-sm-6, .featured-card[data-category]');
+            let visible = 0;
+            document.querySelectorAll('#postsGrid > .col-sm-6').forEach(item => {
+                const itemCat  = item.dataset.category || '';
+                const itemTitle = (item.dataset.title || '').toLowerCase();
+                const catMatch   = cat === 'all' || itemCat === cat;
+                const searchMatch = !search || itemTitle.includes(search);
+                if (catMatch && searchMatch) {
+                    item.style.display = '';
+                    visible++;
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+            document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
+        }
+    </script>
+
+</body>
+</html>
