@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  
   <url>
     <loc>https://faslax.in/</loc>
     <priority>1.0</priority>
@@ -25,4 +26,27 @@
     <priority>0.7</priority>
     <changefreq>monthly</changefreq>
   </url>
+
+  <url>
+    <loc>https://faslax.in/blog.html</loc>
+    <priority>0.8</priority>
+    <changefreq>weekly</changefreq>
+  </url>
+
+  <url>
+    <loc>https://faslax.in/blog/blog-seo-basics.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://faslax.in/blog/blog-travel-agency.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>https://faslax.in/blog/blog-website-speed.html</loc>
+    <priority>0.8</priority>
+    <changefreq>monthly</changefreq>
+  </url>
+
 </urlset>
