@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.gstatic.com">
+<link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
     <title>Contact FasLax – Get a Free Quote | Worldwide</title>
   <meta name="description" content="Ready to start your project? Contact FasLax for a free consultation on web development, SEO, logo design or creative writing. We work with clients worldwide and respond within 24 hours.">
   <link rel="canonical" href="https://faslax.in/contact.html">
@@ -20,66 +25,122 @@
   <meta name="twitter:description" content="Get a free quote for web development, digital marketing, logo design or creative writing. We work worldwide and respond within 24 hours.">
   <meta name="twitter:image" content="https://faslax.in/assets/images/og-preview.jpg">
  
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/fontawesome.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/solid.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/brands.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
-     <!-- Favicon -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style"
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@400;700&display=swap">
+<link rel="stylesheet" media="print" onload="this.media='all'"
+  href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@400;700&display=swap">
+<noscript>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Playfair+Display:wght@400;700&display=swap">
+</noscript>
          <link rel="icon" type="image/png" href="Images/favicon.png">
+         <link rel="stylesheet" href="css/bootstrap.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/pages.css">
 
-    <style>
-        /* Budget dropdown transition */
-        .budget-wrapper {
-            position: relative;
-        }
-        .budget-badge {
-            display: inline-block;
-            font-size: 10px;
-            font-weight: 700;
-            letter-spacing: 0.05em;
-            text-transform: uppercase;
-            padding: 2px 8px;
-            border-radius: 20px;
-            margin-left: 6px;
-            vertical-align: middle;
-            background: linear-gradient(135deg, #e91e8c, #ff6b6b);
-            color: #fff;
-        }
-        .budget-hint {
-            font-size: 11.5px;
-            color: #888;
-            margin-top: 5px;
-            min-height: 18px;
-            transition: opacity 0.25s;
-        }
-        /* Animate select change */
-        @keyframes budgetPop {
-            0%   { transform: scale(0.97); opacity: 0.5; }
-            100% { transform: scale(1);    opacity: 1; }
-        }
-        .budget-animate {
-            animation: budgetPop 0.22s ease;
-        }
-        /* Service badge on select */
-        .service-tag {
-            display: none;
-            align-items: center;
-            gap: 7px;
-            background: #fff0f6;
-            border: 1px solid #ffd6ea;
-            border-radius: 8px;
-            padding: 6px 12px;
-            margin-top: 7px;
-            font-size: 12px;
-            color: #c9186c;
-            font-weight: 600;
-        }
-        .service-tag.show { display: flex; }
-        .service-tag i { font-size: 13px; }
-    </style>
+<style>
+.industry-select-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 8px;
+    margin-top: 6px;
+}
+.ind-pill {
+    background: #fff;
+    border: 1.5px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 8px 10px;
+    font-size: 12px;
+    font-weight: 600;
+    color: #555;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    line-height: 1.4;
+}
+.ind-pill:hover {
+    border-color: #e91e8c;
+    color: #e91e8c;
+}
+.ind-pill.active {
+    background: linear-gradient(135deg, #e91e8c, #ff6b6b);
+    border-color: transparent;
+    color: #fff;
+}
+/* Tier colours */
+.ind-pill[data-tier="micro"].active  { background: linear-gradient(135deg,#2ecc71,#27ae60); }
+.ind-pill[data-tier="medium"].active { background: linear-gradient(135deg,#f39c12,#e67e22); }
+.ind-pill[data-tier="premium"].active{ background: linear-gradient(135deg,#e91e8c,#ff6b6b); }
+.ind-pill[data-tier="event"].active  { background: linear-gradient(135deg,#9b59b6,#8e44ad); }
+
+.ind-group-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    color: #bbb;
+    margin: 14px 0 4px;
+    font-family: 'Montserrat', sans-serif;
+}
+.ind-group-label:first-child { margin-top: 0; }
+
+/* Hidden real input */
+#industryHidden { display: none; }
+
+/* Budget */
+.budget-hint {
+    font-size: 11.5px;
+    color: #888;
+    margin-top: 5px;
+    min-height: 18px;
+}
+.budget-badge {
+    display: inline-block;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    padding: 2px 8px;
+    border-radius: 20px;
+    margin-left: 6px;
+    vertical-align: middle;
+    background: linear-gradient(135deg, #e91e8c, #ff6b6b);
+    color: #fff;
+}
+@keyframes budgetPop {
+    0%   { transform: scale(0.97); opacity: 0.5; }
+    100% { transform: scale(1);    opacity: 1;   }
+}
+.budget-animate { animation: budgetPop 0.22s ease; }
+
+.service-tag {
+    display: none;
+    align-items: center;
+    gap: 7px;
+    background: #fff0f6;
+    border: 1px solid #ffd6ea;
+    border-radius: 8px;
+    padding: 6px 12px;
+    margin-top: 7px;
+    font-size: 12px;
+    color: #c9186c;
+    font-weight: 600;
+}
+.service-tag.show { display: flex; }
+.service-tag i { font-size: 13px; }
+.ind-invalid-msg {
+    font-size: 12px;
+    color: #dc3545;
+    margin-top: 5px;
+    display: none;
+}
+</style>
+
 </head>
 <body>
 
@@ -88,7 +149,7 @@
     <nav class="navbar navbar-expand-lg main-nav">
         <div class="container">
             <a class="navbar-brand logo" href="index.html">
-                <img src="./Images/Logo.png" alt="FasLax Logo">
+                <img src="./Images/Logo.webp" alt="FasLax Logo">
             </a>
             <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#faslaxNavbar">
                 <i class="fa-solid fa-bars-staggered"></i>
@@ -188,69 +249,120 @@
                             Thank you! Your message has been sent. We'll get back to you within 24 hours.
                         </div>
 
-                        <form id="contactForm" name="contact" method="POST" data-netlify="true" novalidate>
-                            <div class="row g-3">
-                                <div class="col-md-6">
-                                    <label class="form-label fw-600">Full Name <span class="text-pink">*</span></label>
-                                    <input type="text" class="form-control contact-input" id="name" name="name" placeholder="Your full name" required>
-                                    <div class="invalid-feedback">Please enter your name.</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label fw-600">Email Address <span class="text-pink">*</span></label>
-                                    <input type="email" class="form-control contact-input" id="email" name="email" placeholder="your@email.com" required>
-                                    <div class="invalid-feedback">Please enter a valid email.</div>
-                                </div>
-                                <div class="col-md-6">
-                                    <label class="form-label fw-600">Phone Number</label>
-                                    <input type="tel" class="form-control contact-input" id="phone" name="phone" placeholder="E.g:- +00 12345 67890">
-                                </div>
+<form id="contactForm" name="contact" method="POST" data-netlify="true" novalidate>
+    <div class="row g-3">
 
-                                <!-- SERVICE SELECT -->
-                                <div class="col-md-6">
-                                    <label class="form-label fw-600">Service Needed <span class="text-pink">*</span></label>
-                                    <select class="form-select contact-input" id="service" name="service" required>
-                                        <option value="" disabled selected>Select a service</option>
-                                        <option value="web">Web Development</option>
-                                        <option value="design">Graphic Design</option>
-                                        <option value="logo">Logo Design</option>
-                                        <option value="social">Social Media Posters</option>
-                                        <option value="marketing">Digital Marketing</option>
-                                        <option value="seo">SEO &amp; SMM</option>
-                                        <option value="hosting">Domain &amp; Hosting</option>
-                                        <option value="complete">Complete Package</option>
-                                    </select>
-                                    <div class="invalid-feedback">Please select a service.</div>
-                                    <!-- Service hint tag -->
-                                    <div class="service-tag" id="serviceTag">
-                                        <i class="fas fa-tag"></i>
-                                        <span id="serviceTagText"></span>
-                                    </div>
-                                </div>
+        <!-- Name -->
+        <div class="col-md-6">
+            <label class="form-label fw-600">Full Name <span class="text-pink">*</span></label>
+            <input type="text" class="form-control contact-input" id="name" name="name" placeholder="Your full name" required>
+            <div class="invalid-feedback">Please enter your name.</div>
+        </div>
 
-                                <!-- DYNAMIC BUDGET SELECT -->
-                                <div class="col-12 budget-wrapper">
-                                    <label class="form-label fw-600">
-                                        Budget Range
-                                        <span class="budget-badge" id="budgetBadge" style="display:none;">Per Package</span>
-                                    </label>
-                                    <select class="form-select contact-input" id="budget" name="budget">
-                                        <option value="" disabled selected>Select your budget</option>
-                                    </select>
-                                    <p class="budget-hint" id="budgetHint"></p>
-                                </div>
+        <!-- Email -->
+        <div class="col-md-6">
+            <label class="form-label fw-600">Email Address <span class="text-pink">*</span></label>
+            <input type="email" class="form-control contact-input" id="email" name="email" placeholder="your@email.com" required>
+            <div class="invalid-feedback">Please enter a valid email.</div>
+        </div>
 
-                                <div class="col-12">
-                                    <label class="form-label fw-600">Project Details <span class="text-pink">*</span></label>
-                                    <textarea class="form-control contact-input" id="message" name="message" rows="5" placeholder="Tell us about your project, goals, timeline, and any specific requirements..." required></textarea>
-                                    <div class="invalid-feedback">Please describe your project.</div>
-                                </div>
-                                <div class="col-12 mt-2">
-                                    <button type="submit" class="btn btn-primary w-100 py-3">
-                                        <i class="fa-solid fa-paper-plane me-2"></i>Send Message
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
+        <!-- Phone -->
+        <div class="col-md-6">
+            <label class="form-label fw-600">Phone Number</label>
+            <input type="tel" class="form-control contact-input" id="phone" name="phone" placeholder="E.g:- +91 12345 67890">
+        </div>
+
+        <!-- Service needed (kept for Netlify form data) -->
+        <div class="col-md-6">
+            <label class="form-label fw-600">Service Needed <span class="text-pink">*</span></label>
+            <select class="form-select contact-input" id="service" name="service" required>
+                <option value="" disabled selected>Select a service</option>
+                <option value="Website">Website</option>
+                <option value="Logo Design">Logo Design</option>
+                <option value="Graphic Design">Graphic Design</option>
+                <option value="Social Media Posters">Social Media Posters</option>
+                <option value="SEO">SEO</option>
+                <option value="Digital Marketing">Digital Marketing</option>
+                <option value="Complete Package">Complete Package</option>
+                <option value="Event Website">Event Website</option>
+                <option value="Other">Other</option>
+            </select>
+            <div class="invalid-feedback">Please select a service.</div>
+            <div class="service-tag" id="serviceTag">
+                <i class="fas fa-tag"></i>
+                <span id="serviceTagText"></span>
+            </div>
+        </div>
+
+        <div class="col-12">
+    <label class="form-label fw-600">Your Business Type <span class="text-pink">*</span></label>
+    <select class="form-select contact-input" id="industrySelect" name="industry" required>
+        <option value="" disabled selected>Select your business type</option>
+        <optgroup label="💚 Home & Personal">
+            <option value="gifts">🎀 Gifts & Crafts</option>
+            <option value="homebaker">🧁 Home Baker</option>
+            <option value="fashion">👗 Fashion</option>
+            <option value="freelancer">📸 Freelancer</option>
+        </optgroup>
+        <optgroup label="💛 Small & Medium Business">
+            <option value="restaurant">🍽️ Restaurant</option>
+            <option value="beauty">💇 Beauty & Wellness</option>
+            <option value="education">🏫 Education</option>
+            <option value="retail">🛍️ Retail Shop</option>
+            <option value="fitness">🏋️ Fitness</option>
+            <option value="trades">🔧 Trades & Services</option>
+        </optgroup>
+        <optgroup label="🔴 Professional & Enterprise">
+            <option value="healthcare">🏥 Healthcare</option>
+            <option value="travel">✈️ Travel</option>
+            <option value="hotel">🏨 Hotel & Resort</option>
+            <option value="realestate">🏠 Real Estate</option>
+            <option value="corporate">💼 Corporate</option>
+            <option value="ecommerce">🛒 E-Commerce</option>
+        </optgroup>
+        <optgroup label="🎊 Events & Occasions">
+            <option value="wedding">🎊 Wedding</option>
+            <option value="concert">🎤 Concert & Shows</option>
+            <option value="sports">🏆 Sports</option>
+            <option value="collegefest">🎓 College Fest</option>
+            <option value="corporateevent">💼 Corporate Event</option>
+        </optgroup>
+    </select>
+    <input type="hidden" id="industryHidden" name="industry" value="">
+    <div class="ind-invalid-msg" id="industryError">
+        <i class="fa-solid fa-circle-exclamation me-1"></i>Please select your business type.
+    </div>
+</div>
+
+        <!-- Dynamic Budget -->
+        <div class="col-12">
+            <label class="form-label fw-600">
+                Budget Range
+                <span class="budget-badge" id="budgetBadge" style="display:none;">Estimated</span>
+            </label>
+            <select class="form-select contact-input" id="budget" name="budget">
+                <option value="" disabled selected>Select your budget</option>
+            </select>
+            <p class="budget-hint" id="budgetHint"></p>
+        </div>
+
+        <!-- Message -->
+        <div class="col-12">
+            <label class="form-label fw-600">Project Details <span class="text-pink">*</span></label>
+            <textarea class="form-control contact-input" id="message" name="message" rows="5"
+                placeholder="Tell us about your project, goals, timeline, and any specific requirements..." required></textarea>
+            <div class="invalid-feedback">Please describe your project.</div>
+        </div>
+
+        <div class="col-12 mt-2">
+            <button type="submit" class="btn btn-primary w-100 py-3">
+                <i class="fa-solid fa-paper-plane me-2"></i>Send Message
+            </button>
+        </div>
+
+    </div>
+</form>
+
                     </div>
                 </div>
 
@@ -276,12 +388,12 @@
                     <div class="contact-social-card p-4 mb-4">
                         <h5 class="mb-3">Follow Us</h5>
                         <div class="d-flex flex-column gap-2">
-                            <a href="#" class="social-link-row">
+                            <a href="https://www.facebook.com/share/1beB9HTVZR/" class="social-link-row">
                                 <i class="fa-brands fa-facebook text-pink"></i>
                                 <span>FasLax on Facebook</span>
                                 <i class="fa-solid fa-arrow-right ms-auto small"></i>
                             </a>
-                            <a href="#" class="social-link-row">
+                            <a href="https://www/instagram.com/faslax.team/" class="social-link-row">
                                 <i class="fa-brands fa-instagram text-pink"></i>
                                 <span>FasLax on Instagram</span>
                                 <i class="fa-solid fa-arrow-right ms-auto small"></i>
@@ -322,14 +434,14 @@
     <div class="container">
         <div class="row footer-main-row">
             <div class="col-lg-4 d-flex flex-column footer-left-col mb-4 mb-lg-0">
-                <img src="./Images/Logo.png" alt="FasLax Logo" class="footer-logo">
+                <img src="./Images/Logo.webp" alt="FasLax Logo" class="footer-logo">
                 <p class="footer-desc">
                     We provide complete web development, graphic design, and digital marketing
                     solutions to help your business grow online.
                 </p>
                 <div class="social-icons d-flex gap-3">
-                    <a href="#"><i class="fa-brands fa-facebook"></i></a>
-                    <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                    <a href="https://www.facebook.com/share/1beB9HTVZR/"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.instagram.com/faslax.team/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                     <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
@@ -362,7 +474,7 @@
                             <li><i class="fas fa-location-dot footer-icon-pink me-1"></i> Kerala, India</li>
                             <li><i class="fas fa-phone footer-icon-pink me-1"></i> +91 62383 77830</li>
                             <li><i class="fas fa-envelope footer-icon-pink me-1"></i> hello@faslax.in</li>
-                            <li class="mb-0"><i class="fas fa-globe footer-icon-pink me-1"></i> <a href="faslax.in">www.faslax.in</a></li>
+                            <li class="mb-0"><i class="fas fa-globe footer-icon-pink me-1"></i> <a href="https://faslax.in/">www.faslax.in</a></li>
                         </ul>
                     </div>
                 </div>
@@ -379,307 +491,333 @@
     </div>
 </footer>
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-
+<script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-// ════════════════════════════════════════════════════════════════════════════
+
+// ══════════════════════════════════════════════════════════════════════════
 //  FASLAX CONTACT FORM — Smart Currency System
-//  • Indian visitors  → INR prices (fresher-friendly rates)
-//  • All other visitors → USD prices converted to their local currency live
-// ════════════════════════════════════════════════════════════════════════════
+//  India visitors  → INR (fixed rates)
+//  All others      → USD amounts converted live to visitor's local currency
+// ══════════════════════════════════════════════════════════════════════════
 
-// ─── Base prices in USD (for international clients, fresher rates) ───────────
-// Indian INR prices are stored separately and never converted — they are fixed.
-const serviceBudgets = {
+// ── Budget data: INR fixed | USD as raw numbers for live conversion ───────
+// Each tier: { lo: USD_low, hi: USD_high_or_null, t: description }
+const industryBudgets = {
+    gifts:      { label: "🎀 Gifts & Crafts",
+        inr: [ { lo:1499,  hi:2999,  t:"Starter – Catalogue website" },
+               { lo:2999,  hi:5999,  t:"Standard – Website + logo + social" },
+               { lo:5999,  hi:null,  t:"Premium – Full brand package" } ],
+        usd: [ { lo:60,   hi:120,  t:"Starter – Catalogue website" },
+               { lo:120,  hi:280,  t:"Standard – Website + logo + social" },
+               { lo:280,  hi:null, t:"Premium – Full brand package" } ] },
 
-    web: {
-        tag: "💻 Web Development",
-        inr: [
-            { label: "Starter – Landing Page",      lo: 500,   hi: 1500  },
-            { label: "Business – 5 Page Website",   lo: 1500,  hi: 5000  },
-            { label: "E-Commerce – Online Store",   lo: 5000,  hi: 15000 },
-            { label: "Custom Web Application",      lo: 15000, hi: 40000 },
-            { label: "Enterprise / Large Scale",    lo: 40000, hi: null   },
-        ],
-        usd: [
-            { label: "Starter – Landing Page",      lo: 50,   hi: 100  },
-            { label: "Business – 5 Page Website",   lo: 100,  hi: 300  },
-            { label: "E-Commerce – Online Store",   lo: 300,  hi: 700  },
-            { label: "Custom Web Application",      lo: 700,  hi: 1500 },
-            { label: "Enterprise / Large Scale",    lo: 1500, hi: null  },
-        ]
-    },
+    homebaker:  { label: "🧁 Home Baker",
+        inr: [ { lo:1499,  hi:2999,  t:"Starter – Catalogue + WhatsApp order" },
+               { lo:2999,  hi:5999,  t:"Standard – Website + logo + social" },
+               { lo:5999,  hi:null,  t:"Premium – Full brand package" } ],
+        usd: [ { lo:60,   hi:120,  t:"Starter – Catalogue + WhatsApp order" },
+               { lo:120,  hi:280,  t:"Standard – Website + logo + social" },
+               { lo:280,  hi:null, t:"Premium – Full brand package" } ] },
 
-    design: {
-        tag: "🎨 Graphic Design",
-        inr: [
-            { label: "Starter – 1–3 Designs",      lo: 150,  hi: 500   },
-            { label: "Basic – Up to 5 Designs",     lo: 500,  hi: 1500  },
-            { label: "Standard – Design Package",   lo: 1500, hi: 4000  },
-            { label: "Premium – Full Brand Kit",    lo: 4000, hi: 10000 },
-            { label: "Enterprise Branding Suite",   lo: 10000,hi: null  },
-        ],
-        usd: [
-            { label: "Starter – 1–3 Designs",      lo: 20,  hi: 50  },
-            { label: "Basic – Up to 5 Designs",     lo: 50,  hi: 120 },
-            { label: "Standard – Design Package",   lo: 120, hi: 300 },
-            { label: "Premium – Full Brand Kit",    lo: 300, hi: 700 },
-            { label: "Enterprise Branding Suite",   lo: 700, hi: null },
-        ]
-    },
+    fashion:    { label: "👗 Fashion & Accessories",
+        inr: [ { lo:1499,  hi:2999,  t:"Starter – Catalogue + social" },
+               { lo:2999,  hi:5999,  t:"Standard – Website + logo + social" },
+               { lo:5999,  hi:null,  t:"Premium – Full brand package" } ],
+        usd: [ { lo:60,   hi:120,  t:"Starter – Catalogue + social" },
+               { lo:120,  hi:280,  t:"Standard – Website + logo + social" },
+               { lo:280,  hi:null, t:"Premium – Full brand package" } ] },
 
-    logo: {
-        tag: "✏️ Logo Design",
-        inr: [
-            { label: "Basic – 1 Concept, 2 Revisions",      lo: 300,  hi: 700  },
-            { label: "Standard – 3 Concepts, 5 Revisions",  lo: 700,  hi: 2000 },
-            { label: "Professional – Full Logo Suite",       lo: 2000, hi: 5000 },
-            { label: "Premium – Brand Identity Pack",        lo: 5000, hi: 12000},
-            { label: "Enterprise Brand System",              lo: 12000,hi: null },
-        ],
-        usd: [
-            { label: "Basic – 1 Concept, 2 Revisions",      lo: 30,  hi: 60  },
-            { label: "Standard – 3 Concepts, 5 Revisions",  lo: 60,  hi: 150 },
-            { label: "Professional – Full Logo Suite",       lo: 150, hi: 350 },
-            { label: "Premium – Brand Identity Pack",        lo: 350, hi: 700 },
-            { label: "Enterprise Brand System",              lo: 700, hi: null },
-        ]
-    },
+    freelancer: { label: "📸 Freelancer & Creator",
+        inr: [ { lo:1499,  hi:2999,  t:"Starter – Portfolio website" },
+               { lo:2999,  hi:5999,  t:"Standard – Portfolio + logo + social" },
+               { lo:5999,  hi:null,  t:"Premium – Full personal brand" } ],
+        usd: [ { lo:60,   hi:120,  t:"Starter – Portfolio website" },
+               { lo:120,  hi:280,  t:"Standard – Portfolio + logo + social" },
+               { lo:280,  hi:null, t:"Premium – Full personal brand" } ] },
 
-    social: {
-        tag: "📱 Social Media Posters",
-        inr: [
-            { label: "Starter – 5 Posts / Month",    lo: 500,  hi: 1000, sfx: "/ mo" },
-            { label: "Basic – 10 Posts / Month",     lo: 1000, hi: 2000, sfx: "/ mo" },
-            { label: "Standard – 20 Posts / Month",  lo: 2000, hi: 4000, sfx: "/ mo" },
-            { label: "Premium – 30 Posts + Stories", lo: 4000, hi: 8000, sfx: "/ mo" },
-            { label: "Custom / Unlimited Package",   lo: 8000, hi: null,  sfx: "/ mo" },
-        ],
-        usd: [
-            { label: "Starter – 5 Posts / Month",    lo: 40,  hi: 80,  sfx: "/ mo" },
-            { label: "Basic – 10 Posts / Month",     lo: 80,  hi: 150, sfx: "/ mo" },
-            { label: "Standard – 20 Posts / Month",  lo: 150, hi: 300, sfx: "/ mo" },
-            { label: "Premium – 30 Posts + Stories", lo: 300, hi: 500, sfx: "/ mo" },
-            { label: "Custom / Unlimited Package",   lo: 500, hi: null, sfx: "/ mo" },
-        ]
-    },
+    restaurant: { label: "🍽️ Restaurant & Cafe",
+        inr: [ { lo:5999,  hi:9999,  t:"Starter – Website + menu" },
+               { lo:9999,  hi:19999, t:"Standard – Website + logo + social" },
+               { lo:19999, hi:null,  t:"Complete bundle – Full digital package" } ],
+        usd: [ { lo:250,  hi:450,  t:"Starter – Website + menu" },
+               { lo:450,  hi:900,  t:"Standard – Website + logo + social" },
+               { lo:900,  hi:null, t:"Complete bundle – Full digital package" } ] },
 
-    marketing: {
-        tag: "📣 Digital Marketing",
-        inr: [
-            { label: "Starter – Basic Ads Setup",       lo: 2000,  hi: 5000,  sfx: "/ mo" },
-            { label: "Growth – Monthly Campaigns",      lo: 5000,  hi: 10000, sfx: "/ mo" },
-            { label: "Pro – Multi-Platform Marketing",  lo: 10000, hi: 20000, sfx: "/ mo" },
-            { label: "Scale – Full Funnel Strategy",    lo: 20000, hi: 40000, sfx: "/ mo" },
-            { label: "Enterprise Marketing Suite",      lo: 40000, hi: null,   sfx: "/ mo" },
-        ],
-        usd: [
-            { label: "Starter – Basic Ads Setup",       lo: 80,   hi: 200,  sfx: "/ mo" },
-            { label: "Growth – Monthly Campaigns",      lo: 200,  hi: 500,  sfx: "/ mo" },
-            { label: "Pro – Multi-Platform Marketing",  lo: 500,  hi: 1000, sfx: "/ mo" },
-            { label: "Scale – Full Funnel Strategy",    lo: 1000, hi: 2000, sfx: "/ mo" },
-            { label: "Enterprise Marketing Suite",      lo: 2000, hi: null,  sfx: "/ mo" },
-        ]
-    },
+    beauty:     { label: "💇 Beauty & Wellness",
+        inr: [ { lo:5999,  hi:9999,  t:"Starter – Website + gallery" },
+               { lo:9999,  hi:19999, t:"Standard – Website + logo + social" },
+               { lo:19999, hi:null,  t:"Complete bundle – Full digital package" } ],
+        usd: [ { lo:250,  hi:450,  t:"Starter – Website + gallery" },
+               { lo:450,  hi:900,  t:"Standard – Website + logo + social" },
+               { lo:900,  hi:null, t:"Complete bundle – Full digital package" } ] },
 
-    seo: {
-        tag: "🔍 SEO & SMM",
-        inr: [
-            { label: "Basic – Local SEO + 2 Platforms",   lo: 1500,  hi: 4000,  sfx: "/ mo" },
-            { label: "Standard – National SEO + SMM",     lo: 4000,  hi: 8000,  sfx: "/ mo" },
-            { label: "Pro – SEO + Full Social Strategy",  lo: 8000,  hi: 15000, sfx: "/ mo" },
-            { label: "Premium – Authority Growth Plan",   lo: 15000, hi: 30000, sfx: "/ mo" },
-            { label: "Enterprise SEO & Social",           lo: 30000, hi: null,   sfx: "/ mo" },
-        ],
-        usd: [
-            { label: "Basic – Local SEO + 2 Platforms",   lo: 60,  hi: 150,  sfx: "/ mo" },
-            { label: "Standard – National SEO + SMM",     lo: 150, hi: 350,  sfx: "/ mo" },
-            { label: "Pro – SEO + Full Social Strategy",  lo: 350, hi: 700,  sfx: "/ mo" },
-            { label: "Premium – Authority Growth Plan",   lo: 700, hi: 1500, sfx: "/ mo" },
-            { label: "Enterprise SEO & Social",           lo: 1500,hi: null,  sfx: "/ mo" },
-        ]
-    },
+    education:  { label: "🏫 Education & Coaching",
+        inr: [ { lo:5999,  hi:9999,  t:"Starter – Website + admissions form" },
+               { lo:9999,  hi:19999, t:"Standard – Website + logo + social" },
+               { lo:19999, hi:null,  t:"Complete bundle – Full digital package" } ],
+        usd: [ { lo:250,  hi:450,  t:"Starter – Website + admissions form" },
+               { lo:450,  hi:900,  t:"Standard – Website + logo + social" },
+               { lo:900,  hi:null, t:"Complete bundle – Full digital package" } ] },
 
-    hosting: {
-        tag: "🌐 Domain & Hosting",
-        inr: [
-            { label: "Shared Hosting – 1 Year",       lo: 1000, hi: 2500,  sfx: "/ yr" },
-            { label: "Business Hosting + SSL",        lo: 2500, hi: 6000,  sfx: "/ yr" },
-            { label: "VPS Hosting + Maintenance",     lo: 6000, hi: 15000, sfx: "/ yr" },
-            { label: "Dedicated Server + Support",    lo: 15000,hi: 35000, sfx: "/ yr" },
-            { label: "Managed Cloud Hosting",         lo: 35000,hi: null,   sfx: "/ yr" },
-        ],
-        usd: [
-            { label: "Shared Hosting – 1 Year",       lo: 30,  hi: 80,   sfx: "/ yr" },
-            { label: "Business Hosting + SSL",        lo: 80,  hi: 200,  sfx: "/ yr" },
-            { label: "VPS Hosting + Maintenance",     lo: 200, hi: 500,  sfx: "/ yr" },
-            { label: "Dedicated Server + Support",    lo: 500, hi: 1200, sfx: "/ yr" },
-            { label: "Managed Cloud Hosting",         lo: 1200,hi: null,  sfx: "/ yr" },
-        ]
-    },
+    retail:     { label: "🛍️ Retail Shop",
+        inr: [ { lo:5999,  hi:9999,  t:"Starter – Website + product showcase" },
+               { lo:9999,  hi:19999, t:"Standard – Website + logo + social" },
+               { lo:19999, hi:null,  t:"Complete bundle – Full digital package" } ],
+        usd: [ { lo:250,  hi:450,  t:"Starter – Website + product showcase" },
+               { lo:450,  hi:900,  t:"Standard – Website + logo + social" },
+               { lo:900,  hi:null, t:"Complete bundle – Full digital package" } ] },
 
-    complete: {
-        tag: "🚀 Complete Package",
-        inr: [
-            { label: "Startup Bundle – Web + Logo",            lo: 2000,  hi: 6000   },
-            { label: "Business Bundle – Web + Design + SEO",   lo: 6000,  hi: 15000  },
-            { label: "Growth Bundle – Full Digital Presence",  lo: 15000, hi: 35000  },
-            { label: "Pro Bundle – All Services + Marketing",  lo: 35000, hi: 80000  },
-            { label: "Enterprise – Custom Everything",         lo: 80000, hi: null    },
-        ],
-        usd: [
-            { label: "Startup Bundle – Web + Logo",            lo: 100,  hi: 300  },
-            { label: "Business Bundle – Web + Design + SEO",   lo: 300,  hi: 800  },
-            { label: "Growth Bundle – Full Digital Presence",  lo: 800,  hi: 2000 },
-            { label: "Pro Bundle – All Services + Marketing",  lo: 2000, hi: 5000 },
-            { label: "Enterprise – Custom Everything",         lo: 5000, hi: null  },
-        ]
-    }
+    fitness:    { label: "🏋️ Fitness & Sports",
+        inr: [ { lo:5999,  hi:9999,  t:"Starter – Website + membership plans" },
+               { lo:9999,  hi:19999, t:"Standard – Website + logo + social" },
+               { lo:19999, hi:null,  t:"Complete bundle – Full digital package" } ],
+        usd: [ { lo:250,  hi:450,  t:"Starter – Website + membership plans" },
+               { lo:450,  hi:900,  t:"Standard – Website + logo + social" },
+               { lo:900,  hi:null, t:"Complete bundle – Full digital package" } ] },
+
+    trades:     { label: "🔧 Trades & Services",
+        inr: [ { lo:5999,  hi:9999,  t:"Starter – Website + services listing" },
+               { lo:9999,  hi:19999, t:"Standard – Website + logo + social" },
+               { lo:19999, hi:null,  t:"Complete bundle – Full digital package" } ],
+        usd: [ { lo:250,  hi:450,  t:"Starter – Website + services listing" },
+               { lo:450,  hi:900,  t:"Standard – Website + logo + social" },
+               { lo:900,  hi:null, t:"Complete bundle – Full digital package" } ] },
+
+    healthcare: { label: "🏥 Healthcare",
+        inr: [ { lo:19999, hi:35000, t:"Clinic website + branding" },
+               { lo:35000, hi:60000, t:"Website + SEO + social media" },
+               { lo:60000, hi:null,  t:"Complete package – All services" } ],
+        usd: [ { lo:800,  hi:1500, t:"Clinic website + branding" },
+               { lo:1500, hi:2500, t:"Website + SEO + social media" },
+               { lo:2500, hi:null, t:"Complete package – All services" } ] },
+
+    travel:     { label: "✈️ Travel & Tourism",
+        inr: [ { lo:19999, hi:35000, t:"Agency website + branding" },
+               { lo:35000, hi:60000, t:"Website + SEO + social media" },
+               { lo:60000, hi:null,  t:"Complete package – All services" } ],
+        usd: [ { lo:800,  hi:1500, t:"Agency website + branding" },
+               { lo:1500, hi:2500, t:"Website + SEO + social media" },
+               { lo:2500, hi:null, t:"Complete package – All services" } ] },
+
+    hotel:      { label: "🏨 Hotel & Resort",
+        inr: [ { lo:19999, hi:35000, t:"Hotel website + branding" },
+               { lo:35000, hi:60000, t:"Website + SEO + social media" },
+               { lo:60000, hi:null,  t:"Complete package – All services" } ],
+        usd: [ { lo:800,  hi:1500, t:"Hotel website + branding" },
+               { lo:1500, hi:2500, t:"Website + SEO + social media" },
+               { lo:2500, hi:null, t:"Complete package – All services" } ] },
+
+    realestate: { label: "🏠 Real Estate",
+        inr: [ { lo:19999, hi:35000, t:"Property website + branding" },
+               { lo:35000, hi:60000, t:"Website + SEO + social media" },
+               { lo:60000, hi:null,  t:"Complete package – All services" } ],
+        usd: [ { lo:800,  hi:1500, t:"Property website + branding" },
+               { lo:1500, hi:2500, t:"Website + SEO + social media" },
+               { lo:2500, hi:null, t:"Complete package – All services" } ] },
+
+    corporate:  { label: "💼 Corporate & Legal",
+        inr: [ { lo:19999, hi:35000, t:"Corporate website + branding" },
+               { lo:35000, hi:60000, t:"Website + SEO + social media" },
+               { lo:60000, hi:null,  t:"Complete package – All services" } ],
+        usd: [ { lo:800,  hi:1500, t:"Corporate website + branding" },
+               { lo:1500, hi:2500, t:"Website + SEO + social media" },
+               { lo:2500, hi:null, t:"Complete package – All services" } ] },
+
+    ecommerce:  { label: "🛒 E-Commerce Brand",
+        inr: [ { lo:19999, hi:35000, t:"Online store + branding" },
+               { lo:35000, hi:60000, t:"Store + SEO + marketing" },
+               { lo:60000, hi:null,  t:"Complete package – All services" } ],
+        usd: [ { lo:800,  hi:1500, t:"Online store + branding" },
+               { lo:1500, hi:2500, t:"Store + SEO + marketing" },
+               { lo:2500, hi:null, t:"Complete package – All services" } ] },
+
+    wedding:    { label: "🎊 Wedding & Occasions",
+        inr: [ { lo:1999,  hi:3999,  t:"Basic wedding page" },
+               { lo:3999,  hi:7999,  t:"Standard wedding website + gallery" },
+               { lo:7999,  hi:null,  t:"Premium – Custom animations + RSVP" } ],
+        usd: [ { lo:80,   hi:160,  t:"Basic wedding page" },
+               { lo:160,  hi:320,  t:"Standard wedding website + gallery" },
+               { lo:320,  hi:null, t:"Premium – Custom animations + RSVP" } ] },
+
+    concert:    { label: "🎤 Concert & Shows",
+        inr: [ { lo:1499,  hi:2999,  t:"Event landing page" },
+               { lo:2999,  hi:5999,  t:"Event website + ticket booking" },
+               { lo:5999,  hi:null,  t:"Full event platform + payment" } ],
+        usd: [ { lo:60,   hi:120,  t:"Event landing page" },
+               { lo:120,  hi:250,  t:"Event website + ticket booking" },
+               { lo:250,  hi:null, t:"Full event platform + payment" } ] },
+
+    sports:     { label: "🏆 Sports Tournament",
+        inr: [ { lo:1999,  hi:3999,  t:"Tournament info + registration" },
+               { lo:3999,  hi:7999,  t:"Full tournament website + scores" },
+               { lo:7999,  hi:null,  t:"Premium platform + payments" } ],
+        usd: [ { lo:80,   hi:160,  t:"Tournament info + registration" },
+               { lo:160,  hi:320,  t:"Full tournament website + scores" },
+               { lo:320,  hi:null, t:"Premium platform + payments" } ] },
+
+    collegefest:{ label: "🎓 College & Uni Fest",
+        inr: [ { lo:1999,  hi:3999,  t:"Fest info + registration" },
+               { lo:3999,  hi:8999,  t:"Multi-event website + team reg" },
+               { lo:8999,  hi:null,  t:"Full fest platform + payments" } ],
+        usd: [ { lo:80,   hi:160,  t:"Fest info + registration" },
+               { lo:160,  hi:380,  t:"Multi-event website + team reg" },
+               { lo:380,  hi:null, t:"Full fest platform + payments" } ] },
+
+    corporateevent: { label: "💼 Corporate Event",
+        inr: [ { lo:4999,  hi:9999,  t:"Event landing page + agenda" },
+               { lo:9999,  hi:19999, t:"Conference site + registration" },
+               { lo:19999, hi:null,  t:"Full event platform + attendee portal" } ],
+        usd: [ { lo:200,  hi:420,  t:"Event landing page + agenda" },
+               { lo:420,  hi:850,  t:"Conference site + registration" },
+               { lo:850,  hi:null, t:"Full event platform + attendee portal" } ] },
 };
 
-const defaultINR = [
-    { label: "Small Budget",  lo: 500,   hi: 2000  },
-    { label: "Moderate",      lo: 2000,  hi: 8000  },
-    { label: "Standard",      lo: 8000,  hi: 25000 },
-    { label: "Premium",       lo: 25000, hi: 60000 },
-    { label: "Enterprise",    lo: 60000, hi: null   },
-];
-const defaultUSD = [
-    { label: "Small Budget",  lo: 50,   hi: 200   },
-    { label: "Moderate",      lo: 200,  hi: 700   },
-    { label: "Standard",      lo: 700,  hi: 2000  },
-    { label: "Premium",       lo: 2000, hi: 5000  },
-    { label: "Enterprise",    lo: 5000, hi: null   },
-];
+// ── Currency symbol map ───────────────────────────────────────────────────
+const currencySymbols = {
+    USD:'$', EUR:'€', GBP:'£', AED:'AED ', SAR:'SAR ', KWD:'KWD ',
+    QAR:'QAR ', BHD:'BHD ', OMR:'OMR ', SGD:'S$', AUD:'A$',
+    CAD:'C$', MYR:'RM ', LKR:'LKR ', PKR:'PKR ', BDT:'৳',
+    NPR:'NPR ', MUR:'MUR ', ZAR:'R ', NGN:'₦', KES:'KSh ',
+    GHS:'GH₵', EGP:'E£ ', JPY:'¥', CNY:'¥', HKD:'HK$',
+    NZD:'NZ$', CHF:'CHF ', SEK:'kr ', NOK:'kr ', DKK:'kr ',
+    MXN:'MX$', BRL:'R$', ARS:'$', CLP:'$', COP:'$',
+    THB:'฿', IDR:'Rp ', PHP:'₱', VND:'₫', TWD:'NT$',
+    OMR:'OMR ', KWD:'KWD ', BHD:'BHD ',
+};
 
-// ─── State ───────────────────────────────────────────────────────────────────
-let userIsIndia   = false;   // set after geo lookup
-let fxRate        = 1;       // USD → local currency rate
-let fxSymbol      = '$';     // local currency symbol
-let fxCode        = 'USD';   // local currency code
-let currentService = null;
+// ── State ─────────────────────────────────────────────────────────────────
+let isIndia          = true;
+let fxRate           = 1;
+let fxSymbol         = '$';
+let fxCode           = 'USD';
+let selectedIndustry = null;
 
-// ─── Elements ────────────────────────────────────────────────────────────────
-const serviceEl    = document.getElementById('service');
-const budgetEl     = document.getElementById('budget');
-const budgetHint   = document.getElementById('budgetHint');
-const budgetBadge  = document.getElementById('budgetBadge');
-const serviceTag   = document.getElementById('serviceTag');
-const serviceTagTx = document.getElementById('serviceTagText');
+const budgetEl    = document.getElementById('budget');
+const budgetHint  = document.getElementById('budgetHint');
+const budgetBadge = document.getElementById('budgetBadge');
+const serviceTag  = document.getElementById('serviceTag');
+const serviceTagTx= document.getElementById('serviceTagText');
+const indHidden   = document.getElementById('industryHidden');
+const indError    = document.getElementById('industryError');
 
-// ─── Formatting helpers ───────────────────────────────────────────────────────
+// ── Format helpers ────────────────────────────────────────────────────────
 function fmtINR(n) {
-    // Indian number formatting: ₹1,500 / ₹1,00,000
     if (n >= 100000) {
-        const lakh = n / 100000;
-        return '₹' + (Number.isInteger(lakh) ? lakh : lakh.toFixed(1)) + ' Lakh';
+        const l = n / 100000;
+        return '₹' + (Number.isInteger(l) ? l : l.toFixed(1)) + ' Lakh';
     }
     return '₹' + n.toLocaleString('en-IN');
 }
 
-function fmtLocal(usd) {
-    const val = Math.round(usd * fxRate);
-    // Format with commas
+function fmtFX(usdAmount) {
+    const val = Math.round(usdAmount * fxRate);
+    // For currencies like JPY, IDR, VND — no decimals, larger numbers
     return fxSymbol + val.toLocaleString();
 }
 
-function buildLabel(item, isIndia) {
-    const sfx = item.sfx ? ' ' + item.sfx : '';
+function buildRangeLabel(item) {
     if (isIndia) {
         const lo = fmtINR(item.lo);
-        return item.hi
-            ? `${item.label}  —  ${lo} – ${fmtINR(item.hi)}${sfx}`
-            : `${item.label}  —  Above ${lo}${sfx}`;
+        return item.hi ? `${lo} – ${fmtINR(item.hi)}` : `Above ${lo}`;
     } else {
-        const lo = fmtLocal(item.lo);
-        return item.hi
-            ? `${item.label}  —  ${lo} – ${fmtLocal(item.hi)}${sfx}`
-            : `${item.label}  —  Above ${lo}${sfx}`;
+        const lo = fmtFX(item.lo);
+        return item.hi ? `${lo} – ${fmtFX(item.hi)}` : `Above ${lo}`;
     }
 }
 
-// ─── Build dropdown ───────────────────────────────────────────────────────────
-function buildBudgetOptions(items, isIndia) {
+// ── Build budget dropdown ─────────────────────────────────────────────────
+function buildBudget(industry) {
+    const data = industry ? industryBudgets[industry] : null;
     budgetEl.innerHTML = '<option value="" disabled selected>Select your budget</option>';
-    items.forEach(item => {
-        const opt = document.createElement('option');
-        opt.textContent = buildLabel(item, isIndia);
-        opt.value = opt.textContent;
-        budgetEl.appendChild(opt);
-    });
+
+    if (data) {
+        const items = isIndia ? data.inr : data.usd;
+        items.forEach(item => {
+            const opt      = document.createElement('option');
+            const rangeStr = buildRangeLabel(item);
+            opt.value       = rangeStr;
+            opt.textContent = `${rangeStr}  —  ${item.t}`;
+            budgetEl.appendChild(opt);
+        });
+        budgetBadge.style.display = 'inline-block';
+        if (isIndia) {
+            budgetHint.textContent = 'Prices in Indian Rupees (₹). Final quote after consultation.';
+        } else if (fxCode === 'USD') {
+            budgetHint.textContent = 'Prices in USD. Final quote after consultation.';
+        } else {
+            budgetHint.textContent = `Prices converted to ${fxCode} from USD. Final quote after consultation.`;
+        }
+    } else {
+        // Generic fallback options
+        const ranges = isIndia
+            ? [ {lo:1499,hi:5999}, {lo:5999,hi:19999}, {lo:19999,hi:60000}, {lo:60000,hi:null} ]
+            : [ {lo:60,hi:250},    {lo:250,hi:900},     {lo:900,hi:2500},    {lo:2500,hi:null}  ];
+        ranges.forEach(r => {
+            const opt = document.createElement('option');
+            const lbl = isIndia
+                ? (r.hi ? `${fmtINR(r.lo)} – ${fmtINR(r.hi)}` : `Above ${fmtINR(r.lo)}`)
+                : (r.hi ? `${fmtFX(r.lo)} – ${fmtFX(r.hi)}`   : `Above ${fmtFX(r.lo)}`);
+            opt.value = opt.textContent = lbl;
+            budgetEl.appendChild(opt);
+        });
+        budgetBadge.style.display = 'none';
+        budgetHint.textContent = '';
+    }
+
     budgetEl.classList.remove('budget-animate');
     void budgetEl.offsetWidth;
     budgetEl.classList.add('budget-animate');
 }
 
-function refreshBudget() {
-    const key  = currentService;
-    const data = key ? serviceBudgets[key] : null;
-
-    if (data) {
-        const items = userIsIndia ? data.inr : data.usd;
-        buildBudgetOptions(items, userIsIndia);
-        const hintText = userIsIndia
-            ? 'Prices shown in Indian Rupees (₹)'
-            : `Prices shown in ${fxCode} (converted from USD)`;
-        budgetHint.textContent    = hintText;
-        budgetBadge.style.display = 'inline-block';
-        serviceTagTx.textContent  = data.tag;
-        serviceTag.classList.add('show');
-    } else {
-        const items = userIsIndia ? defaultINR : defaultUSD;
-        buildBudgetOptions(items, userIsIndia);
-        budgetHint.textContent    = '';
-        budgetBadge.style.display = 'none';
-        serviceTag.classList.remove('show');
-    }
-}
-
-// ─── Service change ───────────────────────────────────────────────────────────
-serviceEl.addEventListener('change', function () {
-    currentService = this.value || null;
-    refreshBudget();
+document.getElementById('industrySelect').addEventListener('change', function () {
+    selectedIndustry = this.value;
+    indHidden.value  = industryBudgets[selectedIndustry]?.label || selectedIndustry;
+    indError.style.display = 'none';
+    buildBudget(selectedIndustry);
 });
 
-// ─── Geo + Currency detection ─────────────────────────────────────────────────
+// ── Service tag ───────────────────────────────────────────────────────────
+const serviceTags = {
+    'Website':              '💻 Web Development',
+    'Logo Design':          '✏️ Logo Design',
+    'Graphic Design':       '🎨 Graphic Design',
+    'Social Media Posters': '📱 Social Media',
+    'SEO':                  '🔍 SEO & SMM',
+    'Digital Marketing':    '📣 Digital Marketing',
+    'Complete Package':     '🚀 Complete Package',
+    'Event Website':        '🎊 Event Website',
+    'Other':                '❓ Other',
+};
+document.getElementById('service').addEventListener('change', function () {
+    const tag = serviceTags[this.value];
+    if (tag) { serviceTagTx.textContent = tag; serviceTag.classList.add('show'); }
+    else     { serviceTag.classList.remove('show'); }
+});
+
+// ── Geo + live FX detection ───────────────────────────────────────────────
 async function initCurrency() {
     try {
-        // 1. Detect country via free IP geo API
         const geoRes  = await fetch('https://ipapi.co/json/');
         const geoData = await geoRes.json();
         const country  = geoData.country_code || 'US';
         const currency = geoData.currency      || 'USD';
 
         if (country === 'IN') {
-            userIsIndia = true;
+            isIndia  = true;
             fxRate   = 1;
             fxSymbol = '₹';
             fxCode   = 'INR';
         } else {
-            userIsIndia = false;
+            isIndia  = false;
             fxCode   = currency;
+            fxSymbol = currencySymbols[currency] || (currency + ' ');
 
-            // Currency symbols for common currencies
-            const symbols = {
-                USD:'$', EUR:'€', GBP:'£', AED:'AED ', SAR:'SAR ', KWD:'KWD ',
-                QAR:'QAR ', BHD:'BHD ', OMR:'OMR ', SGD:'S$', AUD:'A$',
-                CAD:'C$', MYR:'RM ', LKR:'LKR ', PKR:'PKR ', BDT:'৳',
-                NPR:'NPR ', MUR:'MUR ', ZAR:'R ', NGN:'₦', KES:'KSh ',
-                GHS:'GH₵', EGP:'E£ ', JPY:'¥', CNY:'¥', HKD:'HK$',
-                NZD:'NZ$', CHF:'CHF ', SEK:'kr ', NOK:'kr ', DKK:'kr ',
-                MXN:'MX$', BRL:'R$', ARS:'$', CLP:'$', COP:'$',
-                THB:'฿', IDR:'Rp ', PHP:'₱', VND:'₫', TWD:'NT$',
-            };
-            fxSymbol = symbols[currency] || (currency + ' ');
-
-            // 2. Get live exchange rate (USD → user's currency)
             if (currency !== 'USD') {
                 try {
-                    const fxRes  = await fetch(`https://api.exchangerate-api.com/v4/latest/USD`);
+                    const fxRes  = await fetch('https://api.exchangerate-api.com/v4/latest/USD');
                     const fxData = await fxRes.json();
                     fxRate = fxData.rates[currency] || 1;
                 } catch {
-                    // If exchange API fails, fall back to USD
                     fxRate   = 1;
                     fxSymbol = '$';
                     fxCode   = 'USD';
@@ -687,36 +825,72 @@ async function initCurrency() {
             }
         }
     } catch {
-        // Geo failed — default to USD, no India assumption
-        userIsIndia = false;
-        fxRate = 1; fxSymbol = '$'; fxCode = 'USD';
+        isIndia  = false;
+        fxRate   = 1;
+        fxSymbol = '$';
+        fxCode   = 'USD';
     }
 
     // Re-render budget with correct currency
-    refreshBudget();
+    buildBudget(selectedIndustry);
 }
 
-// Boot — show USD defaults immediately, then geo will correct it
-refreshBudget();
+// Show generic USD options immediately, then correct after geo loads
+buildBudget(null);
 initCurrency();
 
-// ─── Form validation ──────────────────────────────────────────────────────────
-document.getElementById('contactForm').addEventListener('submit', function(e) {
+// ── URL param pre-select (from pricing page) ──────────────────────────────
+(function () {
+    const params   = new URLSearchParams(window.location.search);
+    const industry = params.get('industry');
+    const service  = params.get('service');
+    if (industry) {
+    const sel = document.getElementById('industrySelect');
+    sel.value = industry;
+    sel.dispatchEvent(new Event('change'));
+}
+    if (service) {
+        const svc = document.getElementById('service');
+        for (let o of svc.options) {
+            if (o.value === service || o.textContent.includes(service)) {
+                svc.value = o.value;
+                svc.dispatchEvent(new Event('change'));
+                break;
+            }
+        }
+    }
+})();
+
+// ── Form validation + submit ──────────────────────────────────────────────
+document.getElementById('contactForm').addEventListener('submit', function (e) {
     e.preventDefault();
+
+    if (!selectedIndustry) {
+        indError.style.display = 'block';
+        indError.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        this.classList.add('was-validated');
+        return;
+    }
+    indError.style.display = 'none';
+
     if (!this.checkValidity()) {
         this.classList.add('was-validated');
         return;
     }
+
     document.getElementById('formSuccess').classList.remove('d-none');
     this.reset();
     this.classList.remove('was-validated');
-    currentService = null;
-    refreshBudget();
-    budgetHint.textContent    = '';
-    budgetBadge.style.display = 'none';
+    selectedIndustry = null;
+    indHidden.value  = '';
+    document.getElementById('industrySelect').value = '';
     serviceTag.classList.remove('show');
+    buildBudget(null);
+    budgetBadge.style.display = 'none';
+    budgetHint.textContent = '';
     window.scrollTo({ top: document.getElementById('formSuccess').offsetTop - 100, behavior: 'smooth' });
 });
+
 </script>
 </body>
 </html>
