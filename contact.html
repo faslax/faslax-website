@@ -249,7 +249,7 @@
                             Thank you! Your message has been sent. We'll get back to you within 24 hours.
                         </div>
 
-<form id="contactForm" name="contact" method="POST" data-netlify="true" novalidate>
+<form id="contactForm" name="contact" novalidate>
     <div class="row g-3">
 
         <!-- Name -->
@@ -393,7 +393,7 @@
                                 <span>FasLax on Facebook</span>
                                 <i class="fa-solid fa-arrow-right ms-auto small"></i>
                             </a>
-                            <a href="https://www/instagram.com/faslax.team/" class="social-link-row">
+                            <a href="https://www.instagram.com/faslax.team/" class="social-link-row">
                                 <i class="fa-brands fa-instagram text-pink"></i>
                                 <span>FasLax on Instagram</span>
                                 <i class="fa-solid fa-arrow-right ms-auto small"></i>
@@ -443,7 +443,7 @@
                     <a href="https://www.facebook.com/share/1beB9HTVZR/"><i class="fa-brands fa-facebook"></i></a>
                     <a href="https://www.instagram.com/faslax.team/"><i class="fa-brands fa-instagram"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                    <a href="https://wa.me/916238377830" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
                 </div>
             </div>
             <div class="col-lg-8">
@@ -862,7 +862,7 @@ initCurrency();
 })();
 
 // ── Form validation + submit ──────────────────────────────────────────────
-document.getElementById('contactForm').addEventListener('submit', function (e) {
+document.getElementById('contactForm').addEventListener('submit', async function (e) {
     e.preventDefault();
 
     if (!selectedIndustry) {
@@ -878,17 +878,36 @@ document.getElementById('contactForm').addEventListener('submit', function (e) {
         return;
     }
 
-    document.getElementById('formSuccess').classList.remove('d-none');
-    this.reset();
-    this.classList.remove('was-validated');
-    selectedIndustry = null;
-    indHidden.value  = '';
-    document.getElementById('industrySelect').value = '';
-    serviceTag.classList.remove('show');
-    buildBudget(null);
-    budgetBadge.style.display = 'none';
-    budgetHint.textContent = '';
-    window.scrollTo({ top: document.getElementById('formSuccess').offsetTop - 100, behavior: 'smooth' });
+    const form = this;
+    const submitBtn = form.querySelector('button[type="submit"]');
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin me-2"></i>Sending...';
+
+    try {
+        const response = await fetch('https://formspree.io/f/xnjyelre', {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Submit failed');
+
+        document.getElementById('formSuccess').classList.remove('d-none');
+        form.reset();
+        form.classList.remove('was-validated');
+        selectedIndustry = null;
+        indHidden.value  = '';
+        document.getElementById('industrySelect').value = '';
+        serviceTag.classList.remove('show');
+        buildBudget(null);
+        budgetBadge.style.display = 'none';
+        budgetHint.textContent = '';
+        window.scrollTo({ top: document.getElementById('formSuccess').offsetTop - 100, behavior: 'smooth' });
+    } catch (err) {
+        alert('Something went wrong sending your message. Please try WhatsApp instead.');
+    } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane me-2"></i>Send Message';
+    }
 });
 
 </script>
