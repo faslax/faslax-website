@@ -175,6 +175,7 @@
     border-radius: 16px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
     transition: 0.3s ease;
+    overflow: hidden;
 }
 
 .why-item:hover {
@@ -185,6 +186,8 @@
 .why-icon {
     width: 48px;
     height: 48px;
+    min-width: 48px;
+    min-height: 48px;
     border-radius: 12px;
     background: rgba(225, 29, 116, 0.08);
     display: flex;
@@ -192,6 +195,7 @@
     justify-content: center;
     color: var(--primary-pink);
     font-size: 20px;
+    align-self: flex-start;
 }
 
 /* ========================================
