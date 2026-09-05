@@ -148,6 +148,35 @@ body {
 }
 
 /* ========================================
+   SCROLLABLE SERVICES DROPDOWN
+======================================== */
+.navbar .dropdown-menu {
+    max-height: 70vh;               /* സ്ക്രീനിന്റെ 70% ഉയരം */
+    overflow-y: auto;               /* scrollbar കാണിക്കും */
+    overflow-x: hidden;
+    min-width: 320px;
+}
+
+/* Scrollbar സുന്ദരമാക്കൽ */
+.navbar .dropdown-menu::-webkit-scrollbar {
+    width: 6px;
+}
+
+.navbar .dropdown-menu::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+.navbar .dropdown-menu::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 10px;
+}
+
+.navbar .dropdown-menu::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-pink);
+}
+
+/* ========================================
    BUTTONS
 ======================================== */
 .btn-primary {
