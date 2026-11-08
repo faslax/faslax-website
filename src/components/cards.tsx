@@ -36,7 +36,7 @@ export function ServiceCard({ service }: { service: Service }) {
         <Icon size={24} strokeWidth={1.6} />
       </div>
       <h3>{service.shortTitle}</h3>
-      <p>{service.description}</p>
+      <p>{service.headline}</p>
       <span className="text-link">Explore service <ArrowUpRight size={15} /></span>
     </Link>
   );
