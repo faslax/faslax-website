@@ -1,0 +1,12 @@
+# FasLax Digital Solutions - Robots.txt
+User-agent: *
+Allow: /
+
+# Disallow indexing of private or internal routes
+Disallow: /privacy
+Disallow: /terms
+Disallow: /api/
+
+# Host and Sitemap location
+Host: https://www.faslax.in
+Sitemap: https://www.faslax.in/sitemap.xml
