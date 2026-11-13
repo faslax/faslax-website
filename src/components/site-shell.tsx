@@ -32,6 +32,14 @@ function FacebookColorIcon({ size = 20 }: { size?: number }) {
   );
 }
 
+function XColorIcon({ size = 20 }: { size?: number }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor">
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
 function LinkedinColorIcon({ size = 20 }: { size?: number }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="#0A66C2">
@@ -62,6 +70,7 @@ export function SiteShell({ children }: { children: React.ReactNode }) {
   const socialLinks = [
     { label: 'Instagram', href: site.socials.instagram, icon: InstagramColorIcon, glow: 'rgba(214, 36, 159, 0.4)' },
     { label: 'Facebook', href: site.socials.facebook, icon: FacebookColorIcon, glow: 'rgba(24, 119, 242, 0.4)' },
+    { label: 'X', href: (site.socials as { x?: string }).x || 'https://x.com/faslaxdigital', icon: XColorIcon, glow: 'rgba(255, 255, 255, 0.35)' },
     { label: 'LinkedIn', href: site.socials.linkedin, icon: LinkedinColorIcon, glow: 'rgba(10, 102, 194, 0.4)' },
     { label: 'YouTube', href: site.socials.youtube, icon: YoutubeColorIcon, glow: 'rgba(255, 0, 0, 0.4)' },
     { label: 'WhatsApp', href: site.socials.whatsapp, icon: WhatsappColorIcon, glow: 'rgba(37, 211, 102, 0.4)' },

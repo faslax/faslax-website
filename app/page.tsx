@@ -23,7 +23,7 @@ export default function HomePage() {
   const teamMembers = [
     {
       name: 'Fasil Chola',
-      role: 'Web Infrastructure & Tech Lead',
+      role: 'Web & App Development Lead',
       image: '/images/Fasil.webp',
     },
     {
@@ -32,13 +32,8 @@ export default function HomePage() {
       image: '/images/Sreelakshmi.webp',
     },
     {
-      name: 'Jasina Raveendran',
-      role: 'Content Research & Malayalam Copy Lead',
-      image: '/images/Jasina.webp',
-    },
-    {
       name: 'Devu Kesav',
-      role: 'Web & Solutions Developer',
+      role: 'Quality Assurance & Web Solutions Specialist',
       image: '/images/Devu.webp',
     },
   ];
@@ -59,7 +54,7 @@ export default function HomePage() {
           <div className="hero-intro">
             <span className="scroll-cue">Scroll to explore</span>
             <p>
-              High-performance websites, practical AI integrations, and growth-focused digital marketing 
+              High-performance websites, cross-platform apps, and growth-focused digital marketing 
               engineered for businesses across Kerala, India, and Malayalam-speaking entrepreneurs worldwide.
             </p>
           </div>
@@ -148,7 +143,7 @@ export default function HomePage() {
               <div className="proof-item">
                 <span>01</span>
                 <strong>Collaborative Full-Service Team</strong>
-                <p style={{ fontSize: '13px', color: '#999', margin: '4px 0 0 0' }}>Web, AI, and marketing execution aligned together under one roof.</p>
+                <p style={{ fontSize: '13px', color: '#999', margin: '4px 0 0 0' }}>Web, mobile apps, and marketing execution aligned together under one roof.</p>
               </div>
               <div className="proof-item">
                 <span>02</span>
@@ -158,7 +153,7 @@ export default function HomePage() {
               <div className="proof-item">
                 <span>03</span>
                 <strong>Direct Engineering Contact</strong>
-                <p style={{ fontSize: '13px', color: '#999', margin: '4px 0 0 0' }}>You talk directly with developers and content creators, not account managers.</p>
+                <p style={{ fontSize: '13px', color: '#999', margin: '4px 0 0 0' }}>You talk directly with developers and marketers, not account managers.</p>
               </div>
               <div className="proof-item">
                 <span>04</span>
@@ -171,7 +166,7 @@ export default function HomePage() {
       </SlideSection>
 
       {/* ── 5. MARQUEE BANNER ── */}
-      <Marquee>NEXT.JS <b>✳</b> SUPABASE <b>✳</b> AI CHATBOTS <b>✳</b> LOCAL SEO <b>✳</b> PERFORMANCE MARKETING <b>✳</b> KANNUR TO GLOBAL <b>✳</b> </Marquee>
+      <Marquee>NEXT.JS <b>✳</b> REACT NATIVE <b>✳</b> SUPABASE <b>✳</b> LOCAL SEO <b>✳</b> PERFORMANCE MARKETING <b>✳</b> KANNUR TO GLOBAL <b>✳</b> </Marquee>
 
       {/* ── 6. MEET THE TEAM SECTION ── */}
       <SlideSection direction="up" delay={0.1}>
@@ -179,9 +174,9 @@ export default function HomePage() {
           <SectionHeading 
             kicker="04 — Meet Our Team" 
             title={<>The Hands-On Crew Behind <em>FasLax.</em></>} 
-            body="A dedicated Kannur-based engineering, marketing, and content collective working closely with businesses across Kerala, India, and the Gulf." 
+            body="A dedicated Kannur-based engineering, marketing, and quality assurance collective working closely with businesses across Kerala, India, and the Gulf." 
           />
-          <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '30px', marginTop: '40px' }}>
+          <div className="team-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '30px', marginTop: '40px' }}>
             {teamMembers.map((member) => (
               <div key={member.name} className="profile-card text-center" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '16px', padding: '24px' }}>
                 <div style={{ position: 'relative', width: '130px', height: '130px', margin: '0 auto 16px auto' }}>
@@ -210,7 +205,7 @@ export default function HomePage() {
               <SectionHeading 
                 kicker="05 — Selected Projects" 
                 title={<>Proof, Not <em>Promises.</em></>} 
-                body="A glimpse of web platforms and digital systems engineered for performance and real utility." 
+                body="A glimpse of web platforms and mobile applications engineered for performance and real utility." 
               />
               <Link className="button button-dark" href="/works">
                 View all work <ArrowUpRight size={17} />
@@ -234,7 +229,7 @@ export default function HomePage() {
               Let’s Build Something <br />Practical Together.
             </h2>
             <p>
-              Tell us about your website, chatbot integration, or local marketing needs. 
+              Tell us about your website, mobile app, or local marketing needs. 
               We are ready to build fast and deliver clean results.
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginTop: '24px' }}>

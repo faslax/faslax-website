@@ -24,26 +24,20 @@ export default function AboutPage() {
   const teamMembers = [
     {
       name: 'Fasil Chola',
-      role: 'Web Infrastructure & Tech Lead',
-      bio: 'Full-stack software engineer crafting responsive, ultra-fast web architectures, cross-platform apps, and scalable digital systems.',
+      role: 'Web & App Development Lead',
+      bio: 'Full-stack software engineer crafting ultra-fast web architectures, cross-platform mobile applications, and high-converting digital visuals.',
       image: '/images/Fasil.webp',
     },
     {
       name: 'Sreelakshmi Fasil',
       role: 'Digital Marketing Lead',
-      bio: 'Growth strategist driving organic search discovery, Google Business Profile rankings, and high-converting Meta and Google ad campaigns.',
+      bio: 'Growth strategist driving organic search discovery, Google Business Profile rankings, social media brand growth, and Meta and Google ad campaigns.',
       image: '/images/Sreelakshmi.webp',
     },
     {
-      name: 'Jasina Raveendran',
-      role: 'Content Research & Malayalam Copy Lead',
-      bio: 'Research specialist and bilingual copywriter crafting deeply researched Malayalam commercial articles, brand copy, and ad scripts.',
-      image: '/images/Jasina.webp',
-    },
-    {
       name: 'Devu Kesav',
-      role: 'Web & Solutions Developer',
-      bio: 'Developer engineering clean web portals, dynamic integrations, operational utilities, and reliable digital workflows.',
+      role: 'Quality Assurance & Web Solutions Specialist',
+      bio: 'Quality assurance specialist ensuring cross-device responsiveness, bug-free deployments, performance validation, and seamless user experiences.',
       image: '/images/Devu.webp',
     },
   ];
@@ -60,7 +54,7 @@ export default function AboutPage() {
           />
         </div>
         <p style={{ maxWidth: '720px', margin: '20px auto 0 auto', color: '#94a3b8', fontSize: '17px', lineHeight: 1.6 }}>
-          A collaborative team of full-stack developers, growth marketers, and deep-research content strategists — 
+          A collaborative team of full-stack engineers, growth marketers, and quality assurance specialists — 
           delivering high-performance software and compounding digital authority for businesses worldwide.
         </p>
       </section>
@@ -75,12 +69,12 @@ export default function AboutPage() {
           <div className="about-copy">
             <p>
               FasLax Digital Solutions operates as an agile, remote-first studio. What began as a digital collective of software 
-              engineers, marketers, and researchers collaborating online has evolved into a focused product engineering unit. 
+              engineers and marketers collaborating online has evolved into a focused product engineering unit. 
               With our registered administrative hub in Kannur, we work completely distributed to serve clients across India and globally.
             </p>
             <p>
               By removing traditional agency overheads, we focus entirely on engineering excellence: ultra-fast page speeds, 
-              zero-bloat code, authentic regional content research, and measurable revenue generation for growing businesses.
+              zero-bloat code, rigorous quality assurance, and measurable revenue generation for growing businesses.
             </p>
             <div className="d-flex flex-wrap gap-3 mt-4">
               <Link className="button button-dark" href="/contact">
@@ -90,7 +84,7 @@ export default function AboutPage() {
 
             <div className="number-grid">
               <div className="number-card">
-                <strong>4</strong>
+                <strong>03</strong>
                 <span>Core Specialists</span>
               </div>
               <div className="number-card">
@@ -127,7 +121,7 @@ export default function AboutPage() {
                 <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '12px', color: '#fff' }}>Our Mission</h3>
                 <p style={{ color: '#94a3b8', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
                   To equip modern businesses and entrepreneurs with lightweight, high-performance web platforms, 
-                  intelligent chatbot integrations, and organic search visibility that drive real commercial returns.
+                  practical mobile applications, and organic search visibility that drive real commercial returns.
                 </p>
               </div>
 
@@ -145,7 +139,7 @@ export default function AboutPage() {
                 <h3 style={{ fontSize: '20px', fontWeight: 700, marginBottom: '12px', color: '#fff' }}>Our Values</h3>
                 <p style={{ color: '#94a3b8', fontSize: '14px', lineHeight: 1.7, margin: 0 }}>
                   Pragmatic engineering over technology hype, upfront pricing and operational honesty, 
-                  and long-term accountability for every piece of software and copy we deliver.
+                  and long-term accountability for every piece of software and campaign we deliver.
                 </p>
               </div>
             </div>
@@ -159,10 +153,10 @@ export default function AboutPage() {
           <SectionHeading 
             kicker="THE SPECIALISTS / 03" 
             title={<>The Core Team Behind <em>FasLax.</em></>} 
-            body="Engineers, marketers, and researchers collaborating directly with you. Direct access with zero account management filters." 
+            body="Engineers, marketers, and QA specialists collaborating directly with you. Direct access with zero account management filters." 
           />
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '30px', marginTop: '40px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '30px', marginTop: '40px' }}>
             {teamMembers.map((member) => (
               <div 
                 key={member.name} 
@@ -272,7 +266,7 @@ export default function AboutPage() {
             <span className="kicker">Get In Touch</span>
             <h2>Ready to Build Something <br />Remarkable?</h2>
             <p>
-              Whether you want to revamp your website, integrate an intelligent chatbot, 
+              Whether you want to revamp your website, build a mobile application, 
               or dominate local search results in your sector, we are ready.
             </p>
             <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap', marginTop: '24px' }}>
